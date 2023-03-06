@@ -1,0 +1,97 @@
+<h2>Editar Usuario</h2>
+<form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">name:</label>
+      <input type="text" formControlName="name" class="form-control" id="name" required minlength="3" maxlength="30" pattern="[a-zA-Z\s]+">
+      <div *ngIf="usuarioForm.controls['name'].invalid && (usuarioForm.controls['name'].dirty || usuarioForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="usuarioForm.controls['name'].hasError('required')"> 
+          El name es obligatorio.
+        </div>
+        <div *ngIf="usuarioForm.controls['name'].hasError('minlength')"> 
+          El name debe tener al menos 3 caracteres.
+        </div>
+        <div *ngIf="usuarioForm.controls['name'].hasError('maxlength')"> 
+          El name no debe tener más de 30 caracteres.
+        </div>
+        <div *ngIf="usuarioForm.controls['name'].hasError('pattern')"> 
+          El name debe contener solo letras y espacios.
+        </div>
+      </div>
+  </div>
+
+      <div class="form-group">
+        <label for="rol_id">Rol:</label>
+        <select formControlName="rol_id" class="form-control" id="rol_id" required>
+          <option *ngFor="let rol of roles" [value]="rol.id">{{ rol.nombre }}</option>
+        </select>
+        <div *ngIf="usuarioForm.controls['rol_id'].invalid && (usuarioForm.controls['rol_id'].dirty || usuarioForm.controls['rol_id'].touched)" class="alert alert-danger">
+          <div *ngIf="usuarioForm.controls['rol_id'].hasError('required')"> 
+           El rol es obligatorio
+          </div>    
+        </div>
+        </div>
+  
+
+
+
+
+
+
+        <div class="form-group">
+          <label for="active">Estado:</label>
+          <select formControlName="active" class="form-control" id="active" required>
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+          </select>
+          <div *ngIf="usuarioForm.controls['active'].invalid && (usuarioForm.controls['active'].dirty || usuarioForm.controls['active'].touched)" class="alert alert-danger">
+            <div *ngIf="usuarioForm.controls['active'].hasError('required')"> 
+              El estado es obligatorio.
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+          <label for="email">email electrónico:</label>
+          <input type="email" formControlName="email" class="form-control" id="email" required maxlength="65">
+          <div *ngIf="usuarioForm.controls['email'].invalid && (usuarioForm.controls['email'].dirty || usuarioForm.controls['email'].touched)" class="alert alert-danger">
+            <div *ngIf="usuarioForm.controls['email'].hasError('required')"> 
+              El email electrónico es obligatorio.
+            </div>
+            <div *ngIf="usuarioForm.controls['email'].hasError('maxlength')"> 
+              El email electrónico no debe tener más de 65 caracteres.
+            </div>
+            <div *ngIf="usuarioForm.controls['email'].hasError('email')"> 
+              El email electrónico no es válido.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input type="text" formControlName="phone" class="form-control" id="phone" required minlength="10" maxlength="10" pattern="[0-9]+">
+          <div *ngIf="usuarioForm.controls['phone'].invalid && (usuarioForm.controls['phone'].dirty || usuarioForm.controls['phone'].touched)" class="alert alert-danger">
+            <div *ngIf="usuarioForm.controls['phone'].hasError('required')"> 
+              El teléfono es obligatorio.
+            </div>
+            <div *ngIf="usuarioForm.controls['phone'].hasError('minlength')"> 
+              El teléfono debe tener al menos 10 caracteres.
+            </div>
+            <div *ngIf="usuarioForm.controls['phone'].hasError('maxlength')"> 
+              El teléfono no debe tener más de 10 caracteres.
+            </div>
+            <div *ngIf="usuarioForm.controls['phone'].hasError('pattern')"> 
+              El teléfono debe contener solo números.
+            </div>
+          </div>
+  
+        </div>
+          <button type="submit" class="btn btn-primary" [disabled]="usuarioForm.invalid">Crear</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+
+        
+       </form>
+ 

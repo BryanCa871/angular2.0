@@ -1,0 +1,80 @@
+<div class="container">
+  <h2>Crea Producto</h2>
+  <form [formGroup]="productoForm" (ngSubmit)="createProducto()">
+    <div class="form-group">
+      <label for="Nombre">Nombre:</label>
+      <input type="text" formControlName="Nombre" class="form-control" id="Nombre" required minlength="3" maxlength="50" pattern="[a-zA-Z\s]+">
+      <div *ngIf="productoForm.controls['Nombre'].invalid && (productoForm.controls['Nombre'].dirty || productoForm.controls['Nombre'].touched)" class="alert alert-danger">
+        <div *ngIf="productoForm.controls['Nombre'].hasError('required')"> 
+          El nombre es obligatorio.
+        </div>
+        <div *ngIf="productoForm.controls['Nombre'].hasError('minlength')"> 
+          El nombre debe tener al menos 3 caracteres.
+        </div>
+        <div *ngIf="productoForm.controls['Nombre'].hasError('maxlength')"> 
+          El nombre no debe tener más de 50 caracteres.
+        </div>
+        <div *ngIf="productoForm.controls['Nombre'].hasError('pattern')"> 
+          El nombre debe contener solo letras y espacios.
+        </div>
+      </div>
+    
+
+    <div class="form-group">
+      <label for="Stock">Stock:</label>
+      <input type="text" formControlName="Stock" class="form-control" id="Stock" required minlength="1" maxlength="5" pattern="^[0-9]*$">
+      <div *ngIf="productoForm.controls['Stock'].invalid && (productoForm.controls['Stock'].dirty || productoForm.controls['Stock'].touched)" class="alert alert-danger">
+        <div *ngIf="productoForm.controls['Stock'].hasError('required')"> 
+          El stock es obligatorio.
+        </div>
+        <div *ngIf="productoForm.controls['Stock'].hasError('minlength')"> 
+          El stock debe tener al menos 1 dígito.
+        </div>
+        <div *ngIf="productoForm.controls['Stock'].hasError('maxlength')"> 
+          El stock no debe tener más de 5 dígitos.
+        </div>
+        <div *ngIf="productoForm.controls['Stock'].hasError('pattern')"> 
+          El stock debe contener solo números.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Precio">Precio:</label>
+      <input type="text" formControlName="Precio" class="form-control" id="Precio" required minlength="1" maxlength="5" >
+      <div *ngIf="productoForm.controls['Precio'].invalid && (productoForm.controls['Precio'].dirty || productoForm.controls['Precio'].touched)" class="alert alert-danger">
+        <div *ngIf="productoForm.controls['Precio'].errors?.['required']"> 
+          El precio es obligatorio.
+        </div>
+        <div *ngIf="productoForm.controls['Precio'].errors?.['minlength']"> 
+          El precio debe tener al menos 1 dígito.
+        </div>
+        <div *ngIf="productoForm.controls['Precio'].errors?.['maxlength']"> 
+          El precio no debe tener más de 5 dígitos.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Marca">Proveedor</label>
+      <select id="Marca" class="form-control" formControlName="Marca">
+        <option value="" disabled selected>Seleccione una editorial</option>
+        <ng-container *ngIf="provedores">
+          <ng-container *ngFor="let provedor of provedores">
+            <option *ngIf="provedor.Status === 1" [value]="provedor.id">{{ provedor.Nombre }}</option>
+          </ng-container>
+        </ng-container>
+      </select>
+      <div *ngIf="productoForm.controls['Marca'].invalid && (productoForm.controls['Marca'].dirty || productoForm.controls['Marca'].touched)" class="alert alert-danger">
+        <div *ngIf="productoForm.controls['nombre'].hasError('required')">Debe seleccionar una editorial.</div>
+      </div>
+    </div>
+    </div>
+
+    
+<button type="submit" class="btn btn-primary" [disabled]="!productoForm.valid">Crear</button>
+</form>
+</div>
+
+
+

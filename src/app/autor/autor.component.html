@@ -1,0 +1,24 @@
+<h1>AUTORES</h1>
+<div>
+  <a class="btn btn-primary" routerLink="/autores/crear">Crear autor</a>
+</div>
+
+<table class="table table-striped table-over">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let user of autores">
+      <tr *ngIf="user.status === 1">
+        <td>{{ user.nombre }}</td>
+        <td>
+          <a [routerLink]="'/autores/UP/' + user.id " class="btn btn-primary">Editar</a>
+          <button class="btn btn-primary" (click)="deleteUser(user)">Eliminar</button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+

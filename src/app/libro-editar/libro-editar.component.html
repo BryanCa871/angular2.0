@@ -1,0 +1,60 @@
+<h2>Editar autor</h2>
+<form [formGroup]="libroForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <input type="text" formControlName="nombre" class="form-control" id="nombre" required>
+    <div *ngIf="libroForm.controls['nombre'].invalid && (libroForm.controls['nombre'].dirty || libroForm.controls['nombre'].touched)" class="alert alert-danger">
+      <div *ngIf="libroForm.controls['nombre'].hasError('required')"> 
+        El nombre es obligatorio.
+      </div>
+    </div>
+  
+    <label for="numero_de_paginas">Numero de paginas:</label>
+    <input type="text" formControlName="numero_de_paginas" class="form-control" id="numero_de_paginas" required>
+    <div *ngIf="libroForm.controls['numero_de_paginas'].invalid && (libroForm.controls['numero_de_paginas'].dirty || libroForm.controls['numero_de_paginas'].touched)" class="alert alert-danger">
+      <div *ngIf="libroForm.controls['numero_de_paginas'].hasError('required')"> 
+        El nombre es obligatorio.
+      </div>
+    </div>
+
+    <label for="fecha_de_publicacion">Fecha de publicacion:</label>
+    <input type="text" formControlName="fecha_de_publicacion" class="form-control" id="fecha_de_publicacion" required>
+    <div *ngIf="libroForm.controls['fecha_de_publicacion'].invalid && (libroForm.controls['fecha_de_publicacion'].dirty || libroForm.controls['fecha_de_publicacion'].touched)" class="alert alert-danger">
+      <div *ngIf="libroForm.controls['fecha_de_publicacion'].hasError('required')"> 
+        El nombre es obligatorio.
+      </div>
+    </div>
+
+    <label for="fk_editorial">Editorial:</label>
+<select formControlName="fk_editorial" class="form-control" id="fk_editorial" required>
+  <option *ngFor="let editorial of editoriales" [value]="editorial.id">{{ editorial.nombre }}</option>
+</select>
+<div *ngIf="libroForm.controls['fk_autor'].invalid && (libroForm.controls['fk_autor'].dirty || libroForm.controls['fk_autor'].touched)" class="alert alert-danger">
+  <div *ngIf="libroForm.controls['fk_autor'].hasError('required')"> 
+    La editorial es obligatoria
+  </div>    
+</div>
+
+<label for="fk_pais">Pais:</label>
+<select formControlName="fk_pais" class="form-control" id="fk_pais" required>
+  <option *ngFor="let pais of paises" [value]="pais.id">{{ pais.nombre }}</option>
+</select>
+<div *ngIf="libroForm.controls['fk_pais'].invalid && (libroForm.controls['fk_pais'].dirty || libroForm.controls['fk_pais'].touched)" class="alert alert-danger">
+  <div *ngIf="libroForm.controls['fk_pais'].hasError('required')"> 
+    El pais es obligatorio.
+  </div>    
+</div>
+
+<label for="fk_autor">Autor:</label>
+<select formControlName="fk_autor" class="form-control" id="fk_autor" required>
+  <option *ngFor="let autor of autores" [value]="autor.id">{{ autor.nombre }}</option>
+</select>
+<div *ngIf="libroForm.controls['fk_autor'].invalid && (libroForm.controls['fk_autor'].dirty || libroForm.controls['fk_autor'].touched)" class="alert alert-danger">
+  <div *ngIf="libroForm.controls['fk_autor'].hasError('required')"> 
+    El autor es obligatorio.
+  </div>    
+</div>
+
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar cambios</button>
+</form>

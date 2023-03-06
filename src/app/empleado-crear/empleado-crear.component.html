@@ -1,0 +1,117 @@
+<div class="container">
+    <h2>Crea Empleado</h2>
+    <form [formGroup]="empleadoForm" (ngSubmit)="createEmpleado()">
+      <div class="form-group">
+        <label for="Nombre">Nombre:</label>
+        <input type="text" formControlName="Nombre" class="form-control" id="Nombre" required minlength="3" maxlength="30" pattern="[a-zA-Z\s]+">
+        <div *ngIf="empleadoForm.controls['Nombre'].invalid && (empleadoForm.controls['Nombre'].dirty || empleadoForm.controls['Nombre'].touched)" class="alert alert-danger">
+          <div *ngIf="empleadoForm.controls['Nombre'].hasError('required')"> 
+            El nombre es obligatorio.
+          </div>
+          <div *ngIf="empleadoForm.controls['Nombre'].hasError('minlength')"> 
+            El nombre debe tener al menos 3 caracteres.
+          </div>
+          <div *ngIf="empleadoForm.controls['Nombre'].hasError('maxlength')"> 
+            El nombre no debe tener más de 30 caracteres.
+          </div>
+          <div *ngIf="empleadoForm.controls['Nombre'].hasError('pattern')"> 
+            El nombre debe contener solo letras y espacios.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Ap_paterno">Apellido Paterno:</label>
+          <input type="text" formControlName="Ap_paterno" class="form-control" id="Ap_paterno" required minlength="3" maxlength="15" pattern="[a-zA-Z\s]+">
+          <div *ngIf="empleadoForm.controls['Ap_paterno'].invalid && (empleadoForm.controls['Ap_paterno'].dirty || empleadoForm.controls['Ap_paterno'].touched)" class="alert alert-danger">
+            <div *ngIf="empleadoForm.controls['Ap_paterno'].hasError('required')"> 
+              El apellido paterno es obligatorio.
+            </div>
+            <div *ngIf="empleadoForm.controls['Ap_paterno'].hasError('minlength')"> 
+              El apellido paterno debe tener al menos 3 caracteres.
+            </div>
+            <div *ngIf="empleadoForm.controls['Ap_paterno'].hasError('maxlength')"> 
+              El apellido paterno no debe tener más de 15 caracteres.
+            </div>
+            <div *ngIf="empleadoForm.controls['Ap_paterno'].hasError('pattern')"> 
+              El apellido paterno debe contener solo letras y espacios.
+            </div>
+          </div>
+          </div>
+    
+          <div class="form-group">
+          <label for="Ap_materno">Apellido Materno:</label>
+          <input type="text" formControlName="Ap_materno" class="form-control" id="Ap_materno" required minlength="3" maxlength="15" pattern="[a-zA-Z\s]+">
+          <div *ngIf="empleadoForm.controls['Ap_materno'].invalid && (empleadoForm.controls['Ap_materno'].dirty || empleadoForm.controls['Ap_materno'].touched)" class="alert alert-danger">
+            <div *ngIf="empleadoForm.controls['Ap_materno'].hasError('required')"> 
+              El apellido materno es obligatorio.
+            </div>
+            <div *ngIf="empleadoForm.controls['Ap_materno'].hasError('minlength')"> 
+              El apellido materno debe tener al menos 3 caracteres.
+            </div>
+            <div *ngIf="empleadoForm.controls['Ap_materno'].hasError('maxlength')"> 
+              El apellido materno no debe tener más de 15 caracteres.
+            </div>
+          </div>
+          </div>
+      
+
+
+        <div class="form-group">
+          <label for="Correo">Correo electrónico:</label>
+          <input type="email" formControlName="Correo" class="form-control" id="Correo" required maxlength="65">
+          <div *ngIf="empleadoForm.controls['Correo'].invalid && (empleadoForm.controls['Correo'].dirty || empleadoForm.controls['Correo'].touched)" class="alert alert-danger">
+            <div *ngIf="empleadoForm.controls['Correo'].hasError('required')"> 
+              El correo electrónico es obligatorio.
+            </div>
+            <div *ngIf="empleadoForm.controls['Correo'].hasError('maxlength')"> 
+              El correo electrónico no debe tener más de 65 caracteres.
+            </div>
+            <div *ngIf="empleadoForm.controls['Correo'].hasError('email')"> 
+              El correo electrónico no es válido.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Edad">Edad:</label>
+          <input type="text" formControlName="Edad" class="form-control" id="Edad" required minlength="1" maxlength="3" pattern="^[0-9]*$">
+          <div *ngIf="empleadoForm.controls['Edad'].invalid && (empleadoForm.controls['Edad'].dirty || empleadoForm.controls['Edad'].touched)" class="alert alert-danger">
+            <div *ngIf="empleadoForm.controls['Edad'].hasError('required')"> 
+              La edad es obligatoria.
+            </div>
+            <div *ngIf="empleadoForm.controls['Edad'].hasError('minlength')"> 
+              La edad debe tener al menos 1 dígito.
+            </div>
+            <div *ngIf="empleadoForm.controls['Edad'].hasError('maxlength')"> 
+              La edad no debe tener más de 3 dígitos.
+            </div>
+            <div *ngIf="empleadoForm.controls['Edad'].hasError('pattern')"> 
+              La edad solo puede contener números.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="Telefono">Teléfono:</label>
+          <input type="text" formControlName="Telefono" class="form-control" id="Telefono" required minlength="10" maxlength="10" pattern="[0-9]+">
+          <div *ngIf="empleadoForm.controls['Telefono'].invalid && (empleadoForm.controls['Telefono'].dirty || empleadoForm.controls['Telefono'].touched)" class="alert alert-danger">
+            <div *ngIf="empleadoForm.controls['Telefono'].hasError('required')"> 
+              El teléfono es obligatorio.
+            </div>
+            <div *ngIf="empleadoForm.controls['Telefono'].hasError('minlength')"> 
+              El teléfono debe tener al menos 10 caracteres.
+            </div>
+            <div *ngIf="empleadoForm.controls['Telefono'].hasError('maxlength')"> 
+              El teléfono no debe tener más de 10 caracteres.
+            </div>
+            <div *ngIf="empleadoForm.controls['Telefono'].hasError('pattern')"> 
+              El teléfono debe contener solo números.
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <button type="submit" class="btn btn-primary"[disabled]="empleadoForm.invalid">Crear</button>
+    </form>
+  </div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Editar Editorial</h2>
+  <form [formGroup]="editorialForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" formControlName="nombre" class="form-control" id="nombre">
+      <div *ngIf="editorialForm.controls['nombre'].invalid && (editorialForm.controls['nombre'].dirty || editorialForm.controls['nombre'].touched)" class="alert alert-danger">
+        <div *ngIf="editorialForm.controls['nombre'].hasError('required')"> 
+          El nombre es obligatorio.
+        </div>
+        <div *ngIf="editorialForm.controls['nombre'].hasError('minlength')"> 
+          El nombre debe tener al menos 2 letras.
+        </div>
+        <div *ngIf="editorialForm.controls['nombre'].hasError('pattern')"> 
+          El nombre solo puede contener letras.
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="editorialForm.invalid">Crear</button>
+  </form>
+</div>

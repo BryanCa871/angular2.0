@@ -1,0 +1,24 @@
+<h1>EDITORIALES</h1>
+<div>
+  <a class="btn btn-primary" routerLink="/editoriales/crear">Crear Editorial</a>
+</div>
+
+<table class="table table-striped table-over" [@enterState]>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let user of editoriales">
+      <tr *ngIf="user.status === 1">
+        <td>{{ user.nombre }}</td>
+        <td>
+          <a [routerLink]="'/editoriales/UP/' + user.id " class="btn btn-primary">Editar</a>
+          <button class="btn btn-primary" (click)="deleteUser(user)">Eliminar</button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+

@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Validacion</h2>
+    <form [formGroup]="validacionForm" (ngSubmit)="activar()">
+      <div class="form-group">
+        <label for="url">Url:</label>
+        <input type="text" formControlName="url" class="form-control" id="url" required>
+        <div *ngIf="validacionForm.controls['url'].invalid && (validacionForm.controls['url'].dirty || validacionForm.controls['url'].touched)" class="alert alert-danger">
+          <div *ngIf="validacionForm.controls['url'].hasError('required')"> 
+            El nombre es obligatorio.
+          </div>
+        </div>
+      
+        <label for="Correo">Correo:</label>
+        <input type="email" formControlName="Correo" class="form-control" id="Correo" required>
+        <div *ngIf="validacionForm.controls['Correo'].invalid && (validacionForm.controls['Correo'].dirty || validacionForm.controls['Correo'].touched)" class="alert alert-danger">
+          <div *ngIf="validacionForm.controls['Correo'].hasError('required')"> 
+            El nombre es obligatorio.
+          </div>
+        </div>
+
+        <label for="Verificacion">Codigo de Verificacion:</label>
+        <input type="number" formControlName="Verificacion" class="form-control" id="Verificacion" required>
+        <div *ngIf="validacionForm.controls['Verificacion'].invalid && (validacionForm.controls['Verificacion'].dirty || validacionForm.controls['Verificacion'].touched)" class="alert alert-danger">
+          <div *ngIf="validacionForm.controls['Verificacion'].hasError('required')"> 
+            El nombre es obligatorio.
+          </div>
+        </div>
+
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Validar cuenta</button>
+    </form>
+  </div>

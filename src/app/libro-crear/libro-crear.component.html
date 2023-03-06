@@ -1,0 +1,67 @@
+<div class="container">
+  <h1>Crear libro</h1>
+  <form [formGroup]="libroForm" (ngSubmit)="createLibro()">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" class="form-control" formControlName="nombre">
+      <div *ngIf="libroForm.controls['nombre'].invalid && (libroForm.controls['nombre'].dirty || libroForm.controls['nombre'].touched)" class="alert alert-danger">
+        <div *ngIf="libroForm.controls['nombre'].errors?.['required']">El nombre es obligatorio.</div>
+        <div *ngIf="libroForm.controls['nombre'].errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</div>
+        <div *ngIf="libroForm.controls['nombre'].errors?.['maxlength']">El nombre no puede tener más de 60 caracteres.</div>
+        <div *ngIf="libroForm.controls['nombre'].errors?.['pattern']">El nombre solo puede contener letras, números y espacios.</div>
+      </div>
+    </div>
+
+    
+    <div class="form-group">
+      <label for="fk_autor">Autor</label>
+      <select id="fk_autor" class="form-control" formControlName="fk_autor">
+        <option value="" disabled selected>Seleccione un autor</option>
+        <option *ngFor="let autor of autoresActivos" [value]="autor.id">{{ autor.nombre }}</option>
+      </select>
+      <div *ngIf="libroForm.controls['fk_autor'].invalid && (libroForm.controls['fk_autor'].dirty || libroForm.controls['fk_autor'].touched)" class="alert alert-danger">
+        <div *ngIf="libroForm.controls['fk_autor'].errors?.['required']">Debe seleccionar un autor.</div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="fk_editorial">Editorial</label>
+      <select id="fk_editorial" class="form-control" formControlName="fk_editorial">
+        <option value="" disabled selected>Seleccione una editorial</option>
+        <option *ngFor="let editorial of editorialesActivos" [value]="editorial.id">{{ editorial.nombre }}</option>
+      </select>
+      <div *ngIf="libroForm.controls['fk_editorial'].invalid && (libroForm.controls['fk_editorial'].dirty || libroForm.controls['fk_editorial'].touched)" class="alert alert-danger">
+        <div *ngIf="libroForm.controls['nombre'].hasError('required')">Debe seleccionar una editorial.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fecha_de_publicacion">Fecha de publicación</label>
+      <input type="text" id="fecha_de_publicacion" class="form-control" formControlName="fecha_de_publicacion">
+      <div *ngIf="libroForm.controls['fecha_de_publicacion'].invalid && (libroForm.controls['fecha_de_publicacion'].dirty || libroForm.controls['fecha_de_publicacion'].touched)" class="alert alert-danger">
+        <div *ngIf="libroForm.controls['fecha_de_publicacion'].errors?.['required']">La fecha de publicación es obligatoria.</div>
+        <div *ngIf="libroForm.controls['fecha_de_publicacion'].errors?.['minlength']">La fecha de publicación debe tener al menos 8 caracteres.</div>
+        <div *ngIf="libroForm.controls['fecha_de_publicacion'].errors?.['maxlength']">La fecha de publicación no puede tener más de 10 caracteres.</div>
+        <div *ngIf="libroForm.controls['fecha_de_publicacion'].errors?.['pattern']">La fecha de publicación debe tener el formato dd/mm/yyyy o dd-mm-yyyy.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fk_pais">País</label>
+      <select id="fk_pais" class="form-control" formControlName="fk_pais">
+        <option value="" disabled selected>Seleccione un país</option>
+        <option *ngFor="let pais of paisesActivos" [value]="pais.id">{{ pais.nombre }}</option>
+      </select>
+      <div *ngIf="libroForm.controls['fk_pais'].invalid && (libroForm.controls['fk_pais'].dirty || libroForm.controls['fk_pais'].touched)"class="alert alert-danger">
+        <div *ngIf="libroForm.controls['nombre'].hasError('required')">Debe seleccionar un país.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="numero_de_paginas">Número de páginas</label>
+      <input type="text" id="numero_de_paginas" class="form-control" formControlName="numero_de_paginas">
+      <div *ngIf="libroForm.controls['numero_de_paginas'].invalid && (libroForm.controls['numero_de_paginas'].dirty || libroForm.controls['numero_de_paginas'].touched)" class="alert alert-danger">
+        <div *ngIf="libroForm.controls['numero_de_paginas'].errors?.['pattern']">El número de páginas solo puede contener números.</div>
+        <div *ngIf="libroForm.controls['numero_de_paginas'].errors?.['required']">Este campo es obligatorio.</div>
+        <div *ngIf="libroForm.controls['numero_de_paginas'].errors?.['minlength']">El número de páginas debe tener al menos {{libroForm.controls['numero_de_paginas'].errors?.['minlength'].requiredLength}} caracteres.</div>
+        <div *ngIf="libroForm.controls['numero_de_paginas'].errors?.['maxlength']">El número de páginas debe tener menos de {{libroForm.controls['numero_de_paginas'].errors?.['maxlength'].requiredLength}} caracteres.</div>
+     </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="libroForm.invalid">Crear</button>

@@ -1,0 +1,32 @@
+
+<h1>PRODUCTOS</h1>
+<div>
+  <a class="btn btn-primary" routerLink="/producto/crear">Crear Producto</a>
+</div>
+
+<table class="table table-striped table-over" [@enterState]>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Stock</th>
+      <th>Precio</th>
+      <th>Marca</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let producto of productos">
+      <tr >
+        <td>{{ producto.Nombre }}</td>
+        <td>{{producto.Stock}}</td>
+        <td>{{producto.Precio}}</td>
+        <td>{{producto.Marca}}</td>
+        <td>
+          <a [routerLink]="'/producto/' + producto.id " class="btn btn-primary">Editar</a>
+          <button class="btn btn-primary" (click)="deleteUser(producto)">Eliminar</button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+

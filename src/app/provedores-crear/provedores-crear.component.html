@@ -1,0 +1,62 @@
+<div class="container">
+    <h2>Crea Provedor</h2>
+    <form [formGroup]="provedorForm" (ngSubmit)="createProvedor()">
+      <div class="form-group">
+        <label for="Nombre">Nombre:</label>
+      <input type="text" formControlName="Nombre" class="form-control" id="Nombre" required minlength="3" maxlength="30" pattern="[a-zA-Z\s]+">
+      <div *ngIf="provedorForm.controls['Nombre'].invalid && (provedorForm.controls['Nombre'].dirty || provedorForm.controls['Nombre'].touched)" class="alert alert-danger">
+        <div *ngIf="provedorForm.controls['Nombre'].hasError('required')"> 
+          El nombre es obligatorio.
+        </div>
+        <div *ngIf="provedorForm.controls['Nombre'].hasError('minlength')"> 
+          El nombre debe tener al menos 3 caracteres.
+        </div>
+        <div *ngIf="provedorForm.controls['Nombre'].hasError('maxlength')"> 
+          El nombre no debe tener más de 50 caracteres.
+        </div>
+        <div *ngIf="provedorForm.controls['Nombre'].hasError('pattern')"> 
+          El nombre debe contener solo letras y espacios.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Direccion">direccion:</label>
+        <input type="text" formControlName="Direccion" class="form-control" id="Direccion" required minlength="3" maxlength="120" >
+        <div *ngIf="provedorForm.controls['Direccion'].invalid && (provedorForm.controls['Direccion'].dirty || provedorForm.controls['Direccion'].touched)" class="alert alert-danger">
+          <div *ngIf="provedorForm.controls['Direccion'].hasError('required')"> 
+            La direccion es obligatoria.
+          </div>
+          <div *ngIf="provedorForm.controls['Direccion'].hasError('minlength')"> 
+            La direccion debe tener al menos 3 caracteres.
+          </div>
+          <div *ngIf="provedorForm.controls['Direccion'].hasError('maxlength')"> 
+            La direccion no debe tener más de 120 caracteres.
+          </div>
+          
+        </div>
+        </div>
+
+        <label for="Telefono">Teléfono:</label>
+        <input type="text" formControlName="Telefono" class="form-control" id="Telefono" required minlength="10" maxlength="10" pattern="[0-9]+">
+        <div *ngIf="provedorForm.controls['Telefono'].invalid && (provedorForm.controls['Telefono'].dirty || provedorForm.controls['Telefono'].touched)" class="alert alert-danger">
+          <div *ngIf="provedorForm.controls['Telefono'].hasError('required')"> 
+            El teléfono es obligatorio.
+          </div>
+          <div *ngIf="provedorForm.controls['Telefono'].hasError('minlength')"> 
+            El teléfono debe tener al menos 10 caracteres.
+          </div>
+          <div *ngIf="provedorForm.controls['Telefono'].hasError('maxlength')"> 
+            El teléfono no debe tener más de 10 caracteres.
+          </div>
+          <div *ngIf="provedorForm.controls['Telefono'].hasError('pattern')"> 
+            El teléfono debe contener solo números.
+          </div>
+        </div>
+
+      </div>
+      
+        <button type="submit" class="btn btn-primary" [disabled]="provedorForm.invalid">Crear</button>
+      
+     </form>
+    </div>
+   

@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>REGISTRO</h2>
+  <form [formGroup]="userForm" (ngSubmit)="createUser()">
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input type="text" formControlName="name" class="form-control" id="name" required>
+      <div *ngIf="userForm.controls['name'].invalid && (userForm.controls['name'].dirty || userForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="userForm.controls['name'].hasError('required')"> 
+          El nombre es obligatorio.
+        </div>
+      </div>
+      <label for="email">Email:</label>
+      <input type="text" formControlName="email" class="form-control" id="email" required>
+      <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)" class="alert alert-danger">
+        <div *ngIf="userForm.controls['email'].hasError('required')"> 
+          El Email es obligatorio.
+        </div>
+      </div>
+      <label for="phone">Telefono:</label>
+      <input type="text" formControlName="phone" class="form-control" id="phone" required>
+      <div *ngIf="userForm.controls['phone'].invalid && (userForm.controls['phone'].dirty || userForm.controls['phone'].touched)" class="alert alert-danger">
+        <div *ngIf="userForm.controls['phone'].hasError('required')"> 
+          El telefono es obligatorio.
+        </div>
+      </div>
+      <label for="password">Contraseña:</label>
+      <input type="password" formControlName="password" class="form-control" id="password" required>
+      <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)" class="alert alert-danger">
+        <div *ngIf="userForm.controls['password'].hasError('required')"> 
+          La contraseña es obligatoria.
+        </div>
+      </div>
+      
+
+
+
+    
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

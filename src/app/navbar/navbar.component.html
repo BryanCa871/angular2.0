@@ -1,0 +1,28 @@
+<nav *ngIf="auth.isAuthenticated()">
+  <ul class="menu-horizontal">
+    <ng-container *ngIf="usuario">
+        <li *ngIf="usuario.rol_id === 1"><a routerLink="/usuarios" routerLinkActive="active">Usuarios</a></li> 
+  </ng-container>
+    <li>
+      <a>Editorial</a>
+      <ul class="menu-vertical">
+        <li><a routerLink="/autor" routerLinkActive="active">Autores</a></li>
+        <li><a routerLink="/editorial" routerLinkActive="active">Editoriales</a></li>
+        <li><a routerLink="/libro" routerLinkActive="active">Libros</a></li>
+        <li><a routerLink="/pais" routerLinkActive="active">Pais</a></li>
+      </ul>
+    </li>
+    <li>
+      <a>Automotriz</a>
+      <ul class="menu-vertical">
+        <li><a routerLink="/cliente" routerLinkActive="active">Clientes</a></li>
+        <li><a routerLink="/compra" routerLinkActive="active">Compras</a></li>
+        <li><a routerLink="/empleado" routerLinkActive="active">Empleados</a></li>
+          <li><a routerLink="/producto" routerLinkActive="active">Productos</a></li>
+          <li><a routerLink="/provedor" routerLinkActive="active">Proveedores</a></li>
+
+      </ul>
+    </li>
+    <li><button class="btn btn-primary" (click)="deleteSesion()">Eliminar sesion</button></li>
+  </ul>
+</nav>
