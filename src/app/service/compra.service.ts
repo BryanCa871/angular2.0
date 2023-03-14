@@ -11,7 +11,7 @@ export class CompraService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.registerService.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:8000/api/v2/compra';
+  private apiUrl = 'http://127.0.0.1:3333/api/v2/compra';
 
   constructor(private http: HttpClient, private registerService: LoginService) { }
 

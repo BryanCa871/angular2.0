@@ -7,7 +7,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class RegisterService {
-  private apiUrl = 'http://127.0.0.1:8000/api/user';
+  private apiUrl = 'http://127.0.0.1:3333/api/user';
 
   constructor(private http: HttpClient) { }
 

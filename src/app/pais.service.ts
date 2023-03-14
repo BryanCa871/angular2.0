@@ -12,7 +12,7 @@ export class PaisService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.loginService.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:8000/api/v2/pais';
+  private apiUrl = 'http://127.0.0.1:3333/api/v2/pais';
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit {
   showAutomotriz = false;
   showEditorial = false;
   usuario:User = new User();
+  usuarioCargado = false; // variable para indicar si el usuario ya fue cargado
+
 
   constructor(private logout: LogoutService, private router: Router,public auth: AuthService, private login:LoginService) {
     const path = window.location.pathname;
@@ -32,9 +34,17 @@ export class NavbarComponent implements OnInit {
   }
 
   
- read():void{ this.login.user().subscribe({
-    next:(usuario => this.usuario = usuario),
-    error :(error)=> {console.log(error)}
+  read():void{ this.login.user().subscribe({
+    next:(usuario => {
+      this.usuario = usuario;
+      this.usuarioCargado = true; // indicar que el usuario ya fue cargado
+      console.log(this.usuario.name);
+      if(this.usuario.rol_id == 1){
+        usuario.rol_id = 1;
+      }
+      
+    }),
+    error :(error)=> {console.log(this.usuario.name)}
   })
 }
 

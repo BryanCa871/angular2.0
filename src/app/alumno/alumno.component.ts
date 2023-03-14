@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timeInterval } from 'rxjs';
 import { Alumno } from '../alumno';
 import { AlumnoService } from '../alumno.service';
 

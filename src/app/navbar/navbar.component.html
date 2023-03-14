@@ -1,8 +1,15 @@
 <nav *ngIf="auth.isAuthenticated()">
   <ul class="menu-horizontal">
-    <ng-container *ngIf="usuario">
-        <li *ngIf="usuario.rol_id === 1"><a routerLink="/usuarios" routerLinkActive="active">Usuarios</a></li> 
-  </ng-container>
+    <ng-container *ngIf="usuarioCargado && usuario">
+      <li *ngIf="usuario.rol_id === 1"><a routerLink="/usuarios" routerLinkActive="active">Usuarios</a></li> 
+    </ng-container>
+    <li>
+      <a>Prueba</a>
+      <ul class="menu-vertical">
+        <li><a routerLink="/polling" routerLinkActive="active">Polling</a></li>
+        <li><a routerLink="/event" routerLinkActive="active">Event Source</a></li>
+      </ul>
+    </li>
     <li>
       <a>Editorial</a>
       <ul class="menu-vertical">

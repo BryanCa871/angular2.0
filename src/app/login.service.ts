@@ -11,7 +11,7 @@ export class LoginService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:8000/api';
+  private apiUrl = 'http://127.0.0.1:3333/api';
 
   constructor(private http: HttpClient, private cookies: CookieService) { }
 
