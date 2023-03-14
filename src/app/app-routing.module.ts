@@ -38,11 +38,13 @@ import { ComprasCrearComponent } from './compras-crear/compras-crear.component';
 import { ComprasEditarComponent } from './compras-editar/compras-editar.component';
 import { UsuarioComponent } from './user/user.component';
 import { UsuariosEditarComponent } from './user-editar/user-editar.component';
+import { Alumno2Component } from './alumno2/alumno2.component';
 
 const routes: Routes = [
   {path: 'polling', component: AlumnoComponent, canActivate: [ LoginGuard], data: {roles: [1]}},
   {path: 'alumnos/crear', component: AlumnoCrearComponent, canActivate: [LoginGuard], data: {roles: [1]}},
   {path: 'alumnos/:id/edit', component: AlumnoEditarComponent, canActivate: [LoginGuard]},
+  {path: 'eventsource', component: Alumno2Component, canActivate: [LoginGuard], data: {roles: [1]}},
   {path: 'editorial', component: EditorialComponent, canActivate: [LoginGuard], data: {roles: [1,3]}},
   {path: 'editoriales/crear', component: EditorialCrearComponent, canActivate: [LoginGuard], data: {roles: [1]}},
   {path: 'editoriales/UP/:id', component: EditorialEditarComponent, canActivate: [LoginGuard], data: {roles: [1]}},

@@ -34,11 +34,11 @@ export class UserCrearComponent implements OnInit{
         this.loginService.user().subscribe({
           next: (response) => {
             //console.log(this.loginService.getToken());
-            if(response.rol_id == 1){
+            if(this.loginService.isAdmin == true){
               this.router.navigate(['usuarios'])
             }
             else{
-              this.router.navigate(['/producto']);
+              this.router.navigate(['/cliente']);
             }
           },
           error:(error) => {console.log(error)}

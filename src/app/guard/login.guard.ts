@@ -16,6 +16,12 @@ export class LoginGuard implements CanActivate {
       const miArreglo = route.data['roles']
      this.login.user().subscribe({next: (response) => {
       if (response.active == 1 && miArreglo.includes(response.rol_id)) {
+        if (response.rol_id == 1) {
+          this.login.isAdmin = true;
+        }
+        else{
+          this.login.isAdmin = false;
+        }
         this.respuesta = true;
       } else {
         console.log("Cuenta no activa o no posees permisos");

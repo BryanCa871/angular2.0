@@ -6,6 +6,7 @@ import { UsuarioService } from '../user-table.service';
 import { Users } from '../interface/users';
 import { User } from '../user';
 import { LoginService } from '../login.service';
+import { interval, timeInterval } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -17,6 +18,7 @@ export class NavbarComponent implements OnInit {
   showEditorial = false;
   usuario:User = new User();
   usuarioCargado = false; // variable para indicar si el usuario ya fue cargado
+  isAdmin: boolean = false;
 
 
   constructor(private logout: LogoutService, private router: Router,public auth: AuthService, private login:LoginService) {
@@ -29,24 +31,28 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  ngOnInit(){
-    this.read();
+  ngOnInit(): void {
+    this.login.user().subscribe();
+    //this.isAdmin = this.login.getRole() === "1";
+    interval(1000).subscribe(() => {
+      this.isAdmin = this.login.isAdmin
+    });
+    console.log(this.isAdmin);
   }
 
   
-  read():void{ this.login.user().subscribe({
-    next:(usuario => {
-      this.usuario = usuario;
-      this.usuarioCargado = true; // indicar que el usuario ya fue cargado
-      console.log(this.usuario.name);
-      if(this.usuario.rol_id == 1){
-        usuario.rol_id = 1;
+  read(): void {
+    this.login.user().subscribe({
+      next: (usuario => {
+        this.usuario = usuario;
+        this.usuarioCargado = true;
+        this.isAdmin = this.auth.isAuthenticated() && this.usuario.rol_id == 1;
+      }),
+      error: (error) => {
+        console.log(error)
       }
-      
-    }),
-    error :(error)=> {console.log(this.usuario.name)}
-  })
-}
+    });
+  }
 
 
 
@@ -61,5 +67,9 @@ export class NavbarComponent implements OnInit {
       console.log(errors);    }  
   });
     
+  }
+
+  isAdminUser(): boolean {
+    return this.login.getRole() === '1';
   }
 }
