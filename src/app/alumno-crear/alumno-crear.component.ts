@@ -17,8 +17,7 @@ export class AlumnoCrearComponent implements OnInit{
     this.alumnoForm = this.fb.group({
       nombre: ['', Validators.required],
       edad: ['', Validators.required],
-      telefono: ['', Validators.required],
-      fk_pais: ['', Validators.required]
+      telefono: ['', Validators.required]
     });
    }
 
@@ -29,7 +28,7 @@ export class AlumnoCrearComponent implements OnInit{
     this.alumnoService.create(this.alumnoForm.value).subscribe(
       (response) => {
         console.log(response);
-        this.router.navigate(['/alumnos']);
+        this.router.navigate(['/polling']);
       },
       (error) => console.log(error)
     );

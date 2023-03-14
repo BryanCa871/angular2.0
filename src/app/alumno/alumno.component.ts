@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { timeInterval } from 'rxjs';
+import { interval } from 'rxjs';
 import { Alumno } from '../alumno';
 import { AlumnoService } from '../alumno.service';
 
@@ -16,7 +16,13 @@ export class AlumnoComponent implements OnInit {
   constructor(private alumnoService: AlumnoService) { }
 
   ngOnInit() {
-    this.read();
+    this.polling();
+  }
+
+  polling() {
+    interval(1000).subscribe(() => {
+      this.read();
+    });
   }
 
   read(): void {

@@ -3,13 +3,13 @@ export class Alumno {
     nombre: string;
     edad: number;
     telefono: string;
-    fk_pais: number;
+    Status: number;
 
     constructor(){
         this.id = 0;
         this.nombre = "";
         this.edad = 0;
         this.telefono = "";
-        this.fk_pais = 0;
+        this.Status = 0;
     }
 }

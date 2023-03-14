@@ -22,8 +22,7 @@ export class AlumnoEditarComponent implements OnInit {
     this.alumnoForm = this.fb.group({
       nombre: ['', Validators.required],
       edad: ['', Validators.required],
-      telefono: ['', Validators.required],
-      fk_pais: ['', Validators.required]
+      telefono: ['', Validators.required]
     });
 
     this.alumnoService.getById(this.id).subscribe((data: Alumno) => {
@@ -46,6 +45,6 @@ export class AlumnoEditarComponent implements OnInit {
   }
 
   gotoList(): void {
-    this.router.navigate(['/alumnos']);
+    this.router.navigate(['/polling']);
   }
 }
