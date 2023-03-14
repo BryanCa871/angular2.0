@@ -57,6 +57,7 @@ import { UsuarioComponent } from './user/user.component';
 import { UsuariosEditarComponent } from './user-editar/user-editar.component';
 
 import { AuthInterceptor } from './auth.interceptor';
+import { Alumno2Component } from './alumno2/alumno2.component';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { AuthInterceptor } from './auth.interceptor';
     ComprasCrearComponent,
     ComprasEditarComponent,
     UsuarioComponent,
-    UsuariosEditarComponent
+    UsuariosEditarComponent,
+    Alumno2Component
   ],
   imports: [
     BrowserModule,
