@@ -25,7 +25,7 @@ export class LoginGuard implements CanActivate {
         this.respuesta = true;
       } else {
         console.log("Cuenta no activa o no posees permisos");
-        this.router.navigate(['/login']);
+        this.router.navigate(['/error']);
       }
     },
     error: (error) => {

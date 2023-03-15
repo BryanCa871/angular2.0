@@ -35,7 +35,7 @@ export class UserCrearComponent implements OnInit{
           next: (response) => {
             //console.log(this.loginService.getToken());
             if(this.loginService.isAdmin == true){
-              this.router.navigate(['usuarios'])
+              this.router.navigate(['/cliente'])
             }
             else{
               this.router.navigate(['/cliente']);

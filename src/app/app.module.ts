@@ -58,6 +58,9 @@ import { UsuariosEditarComponent } from './user-editar/user-editar.component';
 
 import { AuthInterceptor } from './auth.interceptor';
 import { Alumno2Component } from './alumno2/alumno2.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { AlumnoCrear2Component } from './alumno-crear2/alumno-crear.component';
+import { AlumnoEditar2Component } from './alumno-editar2/alumno-editar.component';
 
 
 @NgModule({
@@ -99,7 +102,10 @@ import { Alumno2Component } from './alumno2/alumno2.component';
     ComprasEditarComponent,
     UsuarioComponent,
     UsuariosEditarComponent,
-    Alumno2Component
+    Alumno2Component,
+    ErrorPageComponent,
+    AlumnoCrear2Component,
+    AlumnoEditar2Component,
   ],
   imports: [
     BrowserModule,

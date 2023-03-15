@@ -39,12 +39,17 @@ import { ComprasEditarComponent } from './compras-editar/compras-editar.componen
 import { UsuarioComponent } from './user/user.component';
 import { UsuariosEditarComponent } from './user-editar/user-editar.component';
 import { Alumno2Component } from './alumno2/alumno2.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { AlumnoCrear2Component } from './alumno-crear2/alumno-crear.component';
+import { AlumnoEditar2Component } from './alumno-editar2/alumno-editar.component';
 
 const routes: Routes = [
-  {path: 'polling', component: AlumnoComponent, canActivate: [ LoginGuard], data: {roles: [1]}},
-  {path: 'alumnos/crear', component: AlumnoCrearComponent, canActivate: [LoginGuard], data: {roles: [1]}},
+  {path: 'polling', component: AlumnoComponent, canActivate: [ LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'alumnos/crear', component: AlumnoCrearComponent, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
   {path: 'alumnos/:id/edit', component: AlumnoEditarComponent, canActivate: [LoginGuard]},
-  {path: 'eventsource', component: Alumno2Component, canActivate: [LoginGuard], data: {roles: [1]}},
+  {path: 'eventsource', component: Alumno2Component, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'eventsource/crear', component: AlumnoCrear2Component, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'eventsource/:id/edit', component: AlumnoEditar2Component, canActivate: [LoginGuard]},
   {path: 'editorial', component: EditorialComponent, canActivate: [LoginGuard], data: {roles: [1,3]}},
   {path: 'editoriales/crear', component: EditorialCrearComponent, canActivate: [LoginGuard], data: {roles: [1]}},
   {path: 'editoriales/UP/:id', component: EditorialEditarComponent, canActivate: [LoginGuard], data: {roles: [1]}},
@@ -79,7 +84,11 @@ const routes: Routes = [
   {path: 'validacion', component:ValidacionComponent},
 
   {path: 'usuarios/:id', component:UsuariosEditarComponent,canActivate: [LoginGuard], data: {roles: [1]}},
-  {path: 'usuarios', component:UsuarioComponent,canActivate: [LoginGuard], data: {roles: [1]}}
+  {path: 'usuarios', component:UsuarioComponent,canActivate: [LoginGuard], data: {roles: [1]}},
+
+  {path: 'error', component:ErrorPageComponent},
+
+
 
 
 

@@ -11,6 +11,7 @@ import { AutorService } from '../autor.service';
 export class AutorComponent implements OnInit {
   autores: Autor[] = [];
   currentAutor: Autor = new Autor();
+  errorMsg: string = ''; // Agregar esta línea
 
   constructor(private autorService: AutorService) { }
 
@@ -19,8 +20,12 @@ export class AutorComponent implements OnInit {
   }
 
   read(): void {
-    this.autorService.read()
-      .subscribe(autores => this.autores = autores);
+    try {
+      this.autorService.read()
+        .subscribe(autores => this.autores = autores);
+    } catch (error) {
+      this.errorMsg = 'Error al obtener los datos del servidor';
+    }
   }
 
  

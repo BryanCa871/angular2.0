@@ -37,7 +37,6 @@ export class NavbarComponent implements OnInit {
     interval(1000).subscribe(() => {
       this.isAdmin = this.login.isAdmin
     });
-    console.log(this.isAdmin);
   }
 
   
