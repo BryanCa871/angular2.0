@@ -16,7 +16,7 @@ export class Alumno2Component implements OnInit {
 
   ngOnInit() {
     this.read();
-    const stream = new EventSource('http://127.0.0.1:3333/stream');
+    const stream = new EventSource('http://192.168.116.159:3333/stream');
     stream.addEventListener('message', (event) => {
       if(event.data){
         this.read();

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 import { Alumno } from '../alumno';
 import { AlumnoService } from '../alumno.service';
 
@@ -9,9 +9,10 @@ import { AlumnoService } from '../alumno.service';
   styleUrls: ['./alumno.component.css'],
   templateUrl: './alumno.component.html',
 })
-export class AlumnoComponent implements OnInit {
+export class AlumnoComponent implements OnInit, OnDestroy {
   alumnos: Alumno[] = [];
   currentAlumno: Alumno = new Alumno();
+  pollingSubscription!: Subscription;
 
   constructor(private alumnoService: AlumnoService) { }
 
@@ -19,8 +20,14 @@ export class AlumnoComponent implements OnInit {
     this.polling();
   }
 
+  ngOnDestroy() {
+    if (this.pollingSubscription) {
+      this.pollingSubscription.unsubscribe();
+    }
+  }
+
   polling() {
-    interval(1000).subscribe(() => {
+    this.pollingSubscription = interval(2000).subscribe(() => {
       this.read();
     });
   }
@@ -29,8 +36,6 @@ export class AlumnoComponent implements OnInit {
     this.alumnoService.read()
       .subscribe(alumnos => this.alumnos = alumnos);
   }
-
- 
 
   deleteUser(user: any) {
     this.alumnoService.delete(user.id).subscribe(
@@ -47,5 +52,3 @@ export class AlumnoComponent implements OnInit {
     this.currentAlumno = user;
   }
 }
-
-

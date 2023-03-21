@@ -11,7 +11,7 @@ export class AutorService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.loginService.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:3333/api/v2/autores';
+  private apiUrl = 'http://192.168.116.159:3333/api/v2/autores';
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

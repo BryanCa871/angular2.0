@@ -11,7 +11,7 @@ export class RolService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.loginService.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:3333/api/v2/roles';
+  private apiUrl = 'http://192.168.116.159:3333/api/v2/roles';
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

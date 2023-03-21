@@ -28,7 +28,7 @@ export class AlumnoCrear2Component implements OnInit{
     this.alumnoService.create(this.alumnoForm.value).subscribe(
       (response) => {
         console.log(response);
-        this.router.navigate(['/polling']);
+        this.router.navigate(['/eventsource']);
       },
       (error) => console.log(error)
     );
