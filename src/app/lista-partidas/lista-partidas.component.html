@@ -1,0 +1,22 @@
+<h1>Partidas</h1>
+<div>
+  <a class="btn btn-primary" routerLink="/partida/crear">Crear Partida</a>
+</div>
+
+<table class="table table-striped table-over" [@enterState]>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Accion</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let user of partidas">
+        <tr *ngIf="user.Status === 1">
+          <td>{{ user.id }}</td>
+          <td>
+            <a [routerLink]="'/pantalla/' + user.id " class="btn btn-primary">Unirme</a>
+          </td>
+        </tr>
+      </ng-container>

@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { slideInAnimation } from './animacion/route-animations';
@@ -61,7 +65,16 @@ import { Alumno2Component } from './alumno2/alumno2.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AlumnoCrear2Component } from './alumno-crear2/alumno-crear.component';
 import { AlumnoEditar2Component } from './alumno-editar2/alumno-editar.component';
+import { BarcoComponent } from './barco/barco.component';
+import { GameBoardComponent } from './game-board/game-board.component';
+import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
+import { PartidaCrearComponent } from './partida-crear/partida-crear.component';
+import { PlayerComponent } from './player/player/player.component';
+import { BoardComponent } from './board/board/board.component';
+import { PlayerBoardComponent } from './playerBoard/player-board/player-board.component';
 
+
+const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
 
 @NgModule({
   declarations: [
@@ -106,6 +119,14 @@ import { AlumnoEditar2Component } from './alumno-editar2/alumno-editar.component
     ErrorPageComponent,
     AlumnoCrear2Component,
     AlumnoEditar2Component,
+    BarcoComponent,
+    GameBoardComponent,
+    ListaPartidasComponent,
+    PartidaCrearComponent,
+    PlayerComponent,
+    BoardComponent,
+    PlayerBoardComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -115,6 +136,7 @@ import { AlumnoEditar2Component } from './alumno-editar2/alumno-editar.component
     ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     AlumnoService, CookieService, RolGuard, LoginGuard, EstadoGuard,ClienteService],

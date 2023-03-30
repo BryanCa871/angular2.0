@@ -42,6 +42,11 @@ import { Alumno2Component } from './alumno2/alumno2.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AlumnoCrear2Component } from './alumno-crear2/alumno-crear.component';
 import { AlumnoEditar2Component } from './alumno-editar2/alumno-editar.component';
+import { BarcoComponent } from './barco/barco.component';
+import { GameBoardComponent } from './game-board/game-board.component';
+import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
+import { PartidaCrearComponent } from './partida-crear/partida-crear.component';
+import { PlayerBoardComponent } from './playerBoard/player-board/player-board.component';
 
 const routes: Routes = [
   {path: 'polling', component: AlumnoComponent, canActivate: [ LoginGuard], data: {roles: [1,2,3]}},
@@ -87,6 +92,12 @@ const routes: Routes = [
   {path: 'usuarios', component:UsuarioComponent,canActivate: [LoginGuard], data: {roles: [1]}},
 
   {path: 'error', component:ErrorPageComponent},
+
+  {path: 'barco', component:BarcoComponent},
+  {path: 'game', component:GameBoardComponent},
+  {path: 'lista', component:ListaPartidasComponent},
+  {path: 'partida/crear', component:PartidaCrearComponent},
+  {path: 'battleship', component:PlayerBoardComponent}
 
 
 

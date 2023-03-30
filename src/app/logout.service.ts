@@ -13,7 +13,7 @@ export class LogoutService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.login.getToken()}`
   });
-  private apiUrl = 'http://192.168.116.159:3333/api/logout';
+  private apiUrl = 'http://127.0.0.1:3333/api/logout';
 
   constructor(private http: HttpClient, private cookies: CookieService, private login: LoginService) { }
 

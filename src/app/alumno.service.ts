@@ -7,7 +7,7 @@ import { Alumno } from './alumno';
   providedIn: 'root'
 })
 export class AlumnoService {
-  private apiUrl = 'http://192.168.116.159:3333/alumnos';
+  private apiUrl = 'http://127.0.0.1:3333/alumnos';
 
   constructor(private http: HttpClient) { }
 
