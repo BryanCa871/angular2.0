@@ -1,6 +1,59 @@
+<<<<<<< Updated upstream
 <div class="game-board">
   <img src="./assets/ship.png" alt="Barco" [style.left.%]="boatPosition">
 </div>
 <button (click)="startMoving()">Comenzar a mover</button>
 
 
+=======
+<h1>Player {{ player }}'s turn</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let col of ['1', '2', '3', '4', '5', '6', '7', '8']">{{ col }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']">
+      <th>{{ row }}</th>
+      <td *ngFor="let col of ['1', '2', '3', '4', '5', '6', '7', '8']; let j = index" 
+          (click)="attack(row + col.toString())"
+          [class.hit]="hits.includes(row + col.toString())"
+          [class.miss]="misses.includes(row + col.toString())"
+          [class.active]="!gameOver && player === 1">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="gameOver">
+  <h2>Game Over!</h2>
+  <h3>Player {{ winner }} wins!</h3>
+</div>
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+  }
+  th {
+    background-color: #e6e6e6;
+  }
+  td.hit {
+    background-color: red;
+  }
+  td.miss {
+    background-color: gray;
+  }
+  td.active {
+    cursor: pointer;
+  }
+</style>
+>>>>>>> Stashed changes

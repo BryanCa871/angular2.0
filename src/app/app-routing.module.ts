@@ -46,7 +46,11 @@ import { BarcoComponent } from './barco/barco.component';
 import { GameBoardComponent } from './game-board/game-board.component';
 import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
 import { PartidaCrearComponent } from './partida-crear/partida-crear.component';
+<<<<<<< Updated upstream
 import { PlayerBoardComponent } from './playerBoard/player-board/player-board.component';
+=======
+import { FormComponent } from './seleccionar-ventana/seleccionar-ventana.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {path: 'polling', component: AlumnoComponent, canActivate: [ LoginGuard], data: {roles: [1,2,3]}},
@@ -97,7 +101,14 @@ const routes: Routes = [
   {path: 'game', component:GameBoardComponent},
   {path: 'lista', component:ListaPartidasComponent},
   {path: 'partida/crear', component:PartidaCrearComponent},
+<<<<<<< Updated upstream
   {path: 'battleship', component:PlayerBoardComponent}
+=======
+  {path: 'seleccionar', component:FormComponent},
+  {path: 'game?position=right', component:GameBoardComponent},
+
+
+>>>>>>> Stashed changes
 
 
 
