@@ -35,10 +35,10 @@ export class UserCrearComponent implements OnInit{
           next: (response) => {
             //console.log(this.loginService.getToken());
             if(this.loginService.isAdmin == true){
-              this.router.navigate(['/lista'])
+              this.router.navigate(['/salon'])
             }
             else{
-              this.router.navigate(['/lista']);
+              this.router.navigate(['/salon']);
             }
           },
           error:(error) => {console.log(error)}

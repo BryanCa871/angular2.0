@@ -1,14 +1,18 @@
 <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th *ngFor="let col of cols">{{col}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of rows">
-        <th>{{row}}</th>
-        <td *ngFor="let col of cols" (click)="onClick(row, col)"></td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let col of cols">{{col}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <th>{{row}}</th>
+      <td *ngFor="let col of cols" 
+          (click)="onClick(row, col)"
+          [class.selected]="selectedCells[row + col]">
+          <img *ngIf="selectedCells[row + col]" [src]="selectedImage" width="20" height="20" />
+      </td>
+    </tr>
+  </tbody>
+</table>

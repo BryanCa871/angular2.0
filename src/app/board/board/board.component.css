@@ -27,4 +27,9 @@ table {
     background-color: #2196f3;
     color: white;
   }
+
+  .board td.selected {
+    pointer-events: none;
+    opacity: 0.5;
+    }
   

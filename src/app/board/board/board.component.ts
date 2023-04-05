@@ -11,6 +11,8 @@ export class BoardComponent {
   board: number[][] = [];
   hits: {[key: string]: boolean} = {};
   misses: {[key: string]: boolean} = {};
+  selectedCells: {[key: string]: boolean} = {};
+  selectedImage = 'assets/tacha.png'; // ruta a la imagen que desea mostrar
 
   ngOnInit(): void {
     this.placeRandomShips();
@@ -19,8 +21,7 @@ export class BoardComponent {
   onClick(row: number, col: string) {
     this.hits[row + col] = true;
     this.misses[row + col] = true;
-    
-    console.log(row, col)
+    this.selectedCells[row + col] = true;
   }
 
   placeRandomShips() {

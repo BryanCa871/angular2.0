@@ -1,0 +1,34 @@
+<h1>SENSORES</h1>
+<div>
+  <a class="btn btn-primary" routerLink="/sensores/crear">Crear sensor</a>
+</div>
+
+
+
+<table class="table table-striped table-over">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Ubicacion</th>
+      <th>Descripcion</th>
+      <th>Pines conectados</th>
+      <th>Fecha de creacion</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let user of sensores">
+        <td>{{ user.nombre }}</td>
+        <td>{{user.tipo}}</td>
+        <td>{{user.ubicacion}}</td>
+        <td>{{user.descripcion}}</td>
+        <td>{{ user.pines }}</td>
+        <td>{{user.fecha_creacion}}</td>
+        <td>
+            <a [routerLink]="'/sensores/' + user._id " class="btn btn-primary">Ver</a>
+          <a [routerLink]="'/sensores/UP/' + user._id " class="btn btn-primary">Editar</a>
+          <button class="btn btn-primary" (click)="deleteUser(user)">Eliminar</button>
+        </td>
+      </tr>
+  </tbody>
+</table>

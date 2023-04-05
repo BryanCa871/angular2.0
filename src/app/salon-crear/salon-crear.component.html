@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Crear Sensor</h2>
+    <form [formGroup]="salonForm" (ngSubmit)="createSensor()">
+      <div class="form-group">
+        <label for="ubicacion">Ubicacion:</label>
+        <div>
+          <input type="text" formControlName="ubicacion" class="form-control" id="ubicacion">
+          <div *ngIf="salonForm.controls['ubicacion'].invalid && (salonForm.controls['ubicacion'].dirty || salonForm.controls['ubicacion'].touched)" class="alert alert-danger">
+            <div *ngIf="salonForm.controls['ubicacion'].hasError('required')"> 
+              La ubicacion es obligatoria.
+            </div>
+            <div *ngIf="salonForm.controls['ubicacion'].hasError('minlength')"> 
+              La ubicacion debe tener al menos 3 letras.
+            </div>
+            <div *ngIf="salonForm.controls['ubicacion'].hasError('pattern')"> 
+              La ubicacion solo puede contener letras.
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="idUsuario">idUsuario:</label>
+        <div>
+            <select id="idUsuario" class="form-control" formControlName="idUsuario">
+                <option value="" disabled selected>Seleccione una editorial</option>
+                  <option [value]="usuarios.id">{{ usuarios.name }}</option>
+              </select>              
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="salonForm.invalid">Crear Sensor</button>
+    </form>
+  </div>
+  

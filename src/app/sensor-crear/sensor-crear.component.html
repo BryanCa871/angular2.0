@@ -1,0 +1,111 @@
+<div class="container">
+    <h2>Crear Sensor</h2>
+    <form [formGroup]="sensorForm" (ngSubmit)="createSensor()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" formControlName="nombre" class="form-control" id="nombre">
+        <div *ngIf="sensorForm.controls['nombre'].invalid && (sensorForm.controls['nombre'].dirty || sensorForm.controls['nombre'].touched)" class="alert alert-danger">
+          <div *ngIf="sensorForm.controls['nombre'].hasError('required')"> 
+            El nombre es obligatorio.
+          </div>
+          <div *ngIf="sensorForm.controls['nombre'].hasError('minlength')"> 
+            El nombre debe tener al menos 3 letras.
+          </div>
+          <div *ngIf="sensorForm.controls['nombre'].hasError('pattern')"> 
+            El nombre solo puede contener letras.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Tipo:</label>
+        <input type="text" formControlName="tipo" class="form-control" id="tipo">
+        <div *ngIf="sensorForm.controls['tipo'].invalid && (sensorForm.controls['tipo'].dirty || sensorForm.controls['tipo'].touched)" class="alert alert-danger">
+          <div *ngIf="sensorForm.controls['tipo'].hasError('required')"> 
+            El tipo es obligatorio.
+          </div>
+          <div *ngIf="sensorForm.controls['tipo'].hasError('minlength')"> 
+            El tipo debe tener al menos 3 letras.
+          </div>
+          <div *ngIf="sensorForm.controls['tipo'].hasError('pattern')"> 
+            El tipo solo puede contener letras.
+          </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ubicacion">Ubicacion:</label>
+            <input type="text" formControlName="ubicacion" class="form-control" id="ubicacion">
+            <div *ngIf="sensorForm.controls['ubicacion'].invalid && (sensorForm.controls['ubicacion'].dirty || sensorForm.controls['ubicacion'].touched)" class="alert alert-danger">
+                <div *ngIf="sensorForm.controls['ubicacion'].hasError('required')"> 
+                La ubicacion es obligatoria.
+                </div>
+                <div *ngIf="sensorForm.controls['ubicacion'].hasError('minlength')"> 
+                La ubicacion debe tener al menos 3 letras.
+                </div>
+                <div *ngIf="sensorForm.controls['ubicacion'].hasError('pattern')"> 
+                La ubicacion solo puede contener letras.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" formControlName="descripcion" class="form-control" id="descripcion">
+            <div *ngIf="sensorForm.controls['descripcion'].invalid && (sensorForm.controls['descripcion'].dirty || sensorForm.controls['descripcion'].touched)" class="alert alert-danger">
+                <div *ngIf="sensorForm.controls['descripcion'].hasError('required')"> 
+                La descripcion es obligatoria.
+                </div>
+                <div *ngIf="sensorForm.controls['descripcion'].hasError('minlength')"> 
+                La descripcion debe tener al menos 3 letras.
+                </div>
+                <div *ngIf="sensorForm.controls['descripcion'].hasError('pattern')"> 
+                La descripcion solo puede contener letras.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="pines">Pines:</label>
+            <input type="text" formControlName="pines" class="form-control" id="pines">
+            <div *ngIf="sensorForm.controls['pines'].invalid && (sensorForm.controls['pines'].dirty || sensorForm.controls['pines'].touched)" class="alert alert-danger">
+                <div *ngIf="sensorForm.controls['pines'].hasError('required')"> 
+                Los pines son obligatorios.
+                </div>
+                <div *ngIf="sensorForm.controls['pines'].hasError('minlength')"> 
+                Los pines deben tener al menos 1 numero.
+                </div>
+                <div *ngIf="sensorForm.controls['pines'].hasError('pattern')"> 
+                Los pines solo puede contener numeros.
+                </div>
+            </div>  
+
+        </div>
+
+
+        <div class="form-group">
+            <label for="fecha_creacion">Fecha de creacion:</label>
+            <input type="text" formControlName="fecha_creacion" class="form-control" id="fecha_creacion">
+            <div *ngIf="sensorForm.controls['fecha_creacion'].invalid && (sensorForm.controls['fecha_creacion'].dirty || sensorForm.controls['fecha_creacion'].touched)" class="alert alert-danger">
+                <div *ngIf="sensorForm.controls['fecha_creacion'].hasError('required')"> 
+                La fecha de creacion es obligatoria.
+                </div>
+                <div *ngIf="sensorForm.controls['fecha_creacion'].hasError('minlength')"> 
+                La fecha de creacion debe tener al menos 3 letras.
+                </div>
+                <div *ngIf="sensorForm.controls['fecha_creacion'].hasError('pattern')"> 
+                La fecha de creacion solo puede contener letras.
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+
+      <button type="submit" class="btn btn-primary" [disabled]="sensorForm.invalid">Crear</button>
+    </form>
+  </div>
