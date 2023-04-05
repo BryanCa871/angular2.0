@@ -66,22 +66,18 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { AlumnoCrear2Component } from './alumno-crear2/alumno-crear.component';
 import { AlumnoEditar2Component } from './alumno-editar2/alumno-editar.component';
 import { BarcoComponent } from './barco/barco.component';
-import { GameBoardComponent } from './game-board/game-board.component';
+//import { GameBoardComponent } from './game-board/game-board.component';
 import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
 import { PartidaCrearComponent } from './partida-crear/partida-crear.component';
-<<<<<<< Updated upstream
 import { PlayerComponent } from './player/player/player.component';
 import { BoardComponent } from './board/board/board.component';
 import { PlayerBoardComponent } from './playerBoard/player-board/player-board.component';
 
 
-=======
-import { FormComponent } from './seleccionar-ventana/seleccionar-ventana.component';
 
 
 
 
->>>>>>> Stashed changes
 const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
 
 @NgModule({
@@ -128,16 +124,13 @@ const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
     AlumnoCrear2Component,
     AlumnoEditar2Component,
     BarcoComponent,
-    GameBoardComponent,
+//    GameBoardComponent,
     ListaPartidasComponent,
     PartidaCrearComponent,
-<<<<<<< Updated upstream
     PlayerComponent,
     BoardComponent,
     PlayerBoardComponent,
-=======
-    FormComponent
->>>>>>> Stashed changes
+    
     
   ],
   imports: [
@@ -148,13 +141,9 @@ const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
     ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule,
-<<<<<<< Updated upstream
-    SocketIoModule.forRoot(config)
-=======
     SocketIoModule.forRoot(config),
     NgbModalModule,
 
->>>>>>> Stashed changes
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     AlumnoService, CookieService, RolGuard, LoginGuard, EstadoGuard,ClienteService],

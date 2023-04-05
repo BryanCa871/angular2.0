@@ -1,18 +1,14 @@
 import { Injectable } from '@angular/core';
-<<<<<<< Updated upstream
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { LoginService } from './login.service';
-=======
->>>>>>> Stashed changes
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class GameService {
-<<<<<<< Updated upstream
   board: any[][];
   ships: any[];
 
@@ -34,7 +30,6 @@ export class GameService {
   }
 
 
-=======
   initialPosition = 'left';
   generatePosition(): string {
     const positions = ['left', 'right'];
@@ -49,5 +44,4 @@ export class GameService {
     return this.initialPosition;
   }
 
->>>>>>> Stashed changes
 }
