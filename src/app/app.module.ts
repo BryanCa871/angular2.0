@@ -29,17 +29,9 @@ import { UsuariosEditarComponent } from './user-editar/user-editar.component';
 
 import { AuthInterceptor } from './auth.interceptor';
 import { ErrorPageComponent } from './error-page/error-page.component';
-<<<<<<< HEAD
-import { AlumnoCrear2Component } from './alumno-crear2/alumno-crear.component';
-import { AlumnoEditar2Component } from './alumno-editar2/alumno-editar.component';
 import { BarcoComponent } from './barco/barco.component';
 //import { GameBoardComponent } from './game-board/game-board.component';
 import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
-import { PartidaCrearComponent } from './partida-crear/partida-crear.component';
-=======
-import { GameBoardComponent } from './game-board/game-board.component';
-import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
->>>>>>> e0d17c6fb64d4bb93d0fc87c5fcee6351331e1ff
 import { PlayerComponent } from './player/player/player.component';
 import { BoardComponent } from './board/board/board.component';
 import { PlayerBoardComponent } from './playerBoard/player-board/player-board.component';
@@ -49,15 +41,13 @@ import { SensorEditarComponent } from './sensor-editar/sensor-editar.component';
 import { DatosComponent } from './datos/datos.component';
 import { SalonComponent } from './salon/salon.component';
 import { SalonCrearComponent } from './salon-crear/salon-crear.component';
-
-
-<<<<<<< HEAD
-
+import { SalonEditarComponent } from './salon-editar/salon-editar.component';
 
 
 
-=======
->>>>>>> e0d17c6fb64d4bb93d0fc87c5fcee6351331e1ff
+
+
+
 const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
 
 @NgModule({
@@ -70,19 +60,6 @@ const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
     UsuarioComponent,
     UsuariosEditarComponent,
     ErrorPageComponent,
-<<<<<<< HEAD
-    AlumnoCrear2Component,
-    AlumnoEditar2Component,
-    BarcoComponent,
-//    GameBoardComponent,
-    ListaPartidasComponent,
-    PartidaCrearComponent,
-    PlayerComponent,
-    BoardComponent,
-    PlayerBoardComponent,
-    
-=======
-    GameBoardComponent,
     ListaPartidasComponent,
     PlayerComponent,
     BoardComponent,
@@ -93,7 +70,7 @@ const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
     DatosComponent,
     SalonComponent,
     SalonCrearComponent,
->>>>>>> e0d17c6fb64d4bb93d0fc87c5fcee6351331e1ff
+    SalonEditarComponent,
     
   ],
   imports: [
@@ -104,13 +81,9 @@ const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
     ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
     SocketIoModule.forRoot(config),
     NgbModalModule,
 
-=======
-    SocketIoModule.forRoot(config)
->>>>>>> e0d17c6fb64d4bb93d0fc87c5fcee6351331e1ff
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, CookieService, RolGuard, LoginGuard, EstadoGuard],
   bootstrap: [AppComponent]

@@ -13,26 +13,16 @@ import { User } from '../user';
 export class SalonCrearComponent implements OnInit{
   salonForm: FormGroup;
   salon: Salon = new Salon();
-  usuarios: User =  new User();
-  usuariosActivos: User[] = [];
 
   constructor(private salonService: SalonService, private fb: FormBuilder, private router: Router) {
     this.salonForm = this.fb.group({
       ubicacion: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]*$/)]),
-      idUsuario: new FormControl('', Validators.required)
+    
     });
   }
   
 
   ngOnInit(): void {
-    console.log('Before API call:', this.usuarios);
-    this.salonService.obtenerUser().subscribe(
-      (usuarios: User) => {
-        this.usuarios = usuarios;
-        console.log('After API call:', this.usuarios);
-      },
-      (error) => console.log(error)
-    );
   }
   
 
