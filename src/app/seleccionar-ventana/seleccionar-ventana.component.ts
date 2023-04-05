@@ -1,6 +1,4 @@
-<<<<<<< Updated upstream
 
-=======
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
@@ -34,4 +32,3 @@ export class FormComponent {
     this.router.navigateByUrl('/game?position=left');
   }
 }
->>>>>>> Stashed changes

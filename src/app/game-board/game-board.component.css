@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 .game-board {
   display: flex;
   justify-content: center;
@@ -19,7 +19,6 @@ img {
 button {
   margin-top: 20px;
 }
-=======
 .monitor {
     display: inline-block;
     width: 300px;
@@ -49,5 +48,4 @@ button {
   button {
     margin-top: 20px;
   }
-  
->>>>>>> Stashed changes
+ 

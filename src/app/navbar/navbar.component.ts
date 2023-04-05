@@ -3,7 +3,6 @@ import { LogoutService } from '../logout.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { UsuarioService } from '../user-table.service';
-import { Users } from '../interface/users';
 import { User } from '../user';
 import { LoginService } from '../login.service';
 import { interval, timeInterval } from 'rxjs';
