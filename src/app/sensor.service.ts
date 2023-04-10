@@ -11,7 +11,7 @@ export class SensorService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.loginService.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:3333/api/v2/sensores';
+  private apiUrl = 'http://184.72.79.221:3333/api/v2/sensores';
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginService } from '../login.service';
-import { Board } from '../boardClass/board';
-
 export interface Tiles{
   used: boolean
   value: number
@@ -18,7 +16,7 @@ export class BoardService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.registerService.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:3333/api/v2/empleado';
+  private apiUrl = 'http://184.72.79.221:3333/api/v2/empleado';
 
   constructor(private http: HttpClient, private registerService: LoginService) { }
 

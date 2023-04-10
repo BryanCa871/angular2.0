@@ -13,7 +13,7 @@ export class LoginService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:3333/api';
+  private apiUrl = 'http://184.72.79.221:3333/api';
   public rol_id!: number;
   public isAdmin: boolean = false;
   

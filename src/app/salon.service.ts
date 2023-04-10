@@ -12,7 +12,7 @@ export class SalonService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.loginService.getToken()}`
   });
-  private apiUrl = 'http://127.0.0.1:3333/api/v2/salones';
+  private apiUrl = 'http://184.72.79.221:3333/api/v2/salones';
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

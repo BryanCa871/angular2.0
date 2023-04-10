@@ -30,7 +30,6 @@ import { UsuariosEditarComponent } from './user-editar/user-editar.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { ErrorPageComponent } from './error-page/error-page.component';
 //import { GameBoardComponent } from './game-board/game-board.component';
-import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
 import { SensorComponent } from './sensor/sensor.component';
 import { SensorCrearComponent } from './sensor-crear/sensor-crear.component';
 import { SensorEditarComponent } from './sensor-editar/sensor-editar.component';
@@ -56,7 +55,6 @@ const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
     UsuarioComponent,
     UsuariosEditarComponent,
     ErrorPageComponent,
-    ListaPartidasComponent,
     SensorComponent,
     SensorCrearComponent,
     SensorEditarComponent,
