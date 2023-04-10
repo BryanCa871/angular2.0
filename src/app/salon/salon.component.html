@@ -1,6 +1,6 @@
 <h1>SALONES</h1>
 <div>
-  <a class="btn btn-primary" routerLink="/salones/crear">Crear sensor</a>
+  <a class="btn btn-primary" routerLink="/salones/crear">Crear salon</a>
 </div>
 
 
@@ -15,9 +15,9 @@
   <tbody>
       <tr *ngFor="let user of salonesFiltrados">
         <td>{{ user.ubicacion }}</td>
-        <td>{{user.nombreUsuario}}</td>
+        <td>{{user.user.name}}</td>
         <td>
-            <a [routerLink]="'/sensor/' " class="btn btn-primary">Ver</a>
+            <a [routerLink]="'/sensor/' " class="btn btn-primary">Ver sensores</a>
           <a [routerLink]="'/salones/UP/' + user._id " class="btn btn-primary">Editar</a>
           <button class="btn btn-primary" (click)="deleteUser(user)">Eliminar</button>
         </td>

@@ -26,7 +26,7 @@ export class SalonCrearComponent implements OnInit{
   }
   
 
-  createSensor(): void {
+  createSalon(): void {
     this.salonService.create(this.salonForm.value).subscribe(
       (response) => {
         console.log(response);

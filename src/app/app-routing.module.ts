@@ -34,7 +34,7 @@ const routes: Routes = [
   {path: 'error', component:ErrorPageComponent},
 
   {path: 'barco', component:BarcoComponent},
-//  {path: 'game', component:GameBoardComponent},
+//{path: 'game', component:GameBoardComponent},
   {path: 'lista', component:ListaPartidasComponent},
 //  {path: 'game?position=right', component:GameBoardComponent},
   {path: 'lista', component:ListaPartidasComponent},
