@@ -9,7 +9,6 @@ import { UsuariosEditarComponent } from './user-editar/user-editar.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 //import { GameBoardComponent } from './game-board/game-board.component';
 //import { PartidaCrearComponent } from './partida-crear/partida-crear.component';
-import { FormComponent } from './seleccionar-ventana/seleccionar-ventana.component';
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 import { SensorComponent } from './sensor/sensor.component';
@@ -30,7 +29,6 @@ const routes: Routes = [
   {path: 'usuarios', component:UsuarioComponent,canActivate: [LoginGuard], data: {roles: [1]}},
 
   {path: 'error', component:ErrorPageComponent},
-  {path: 'seleccionar', component:FormComponent},
 
   /////////////////////////////////////////////////////////
   {path: 'sensor', component:SensorComponent},
