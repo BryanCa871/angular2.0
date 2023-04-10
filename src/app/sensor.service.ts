@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Sensor } from './sensor';
 import { LoginService } from './login.service';
+import { Enviromet } from 'src/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class SensorService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.loginService.getToken()}`
   });
-  private apiUrl = 'http://184.72.79.221:3333/api/v2/sensores';
+  private apiUrl = `http://${Enviromet.url}/api/v2/sensores`;
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

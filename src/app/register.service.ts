@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './user';
+import { Enviromet } from 'src/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
-  private apiUrl = 'http://184.72.79.221:3333/api/user';
+  private apiUrl = `http://${Enviromet.url}/api/user`;
 
   constructor(private http: HttpClient) { }
 

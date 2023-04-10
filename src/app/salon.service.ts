@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Salon } from './salon';
 import { LoginService } from './login.service';
 import { User } from './user';
+import { Enviromet } from 'src/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class SalonService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.loginService.getToken()}`
   });
-  private apiUrl = 'http://184.72.79.221:3333/api/v2/salones';
+  private apiUrl = `http://${Enviromet.url}/api/v2/salones`;
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

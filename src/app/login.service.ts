@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from './user';
 import { tap } from 'rxjs/operators';
-
+import { Enviromet } from 'src/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class LoginService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.getToken()}`
   });
-  private apiUrl = 'http://184.72.79.221:3333/api';
+  private apiUrl = `http://${Enviromet.url}/api`;
   public rol_id!: number;
   public isAdmin: boolean = false;
   

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Rol } from './rol';
 import { LoginService } from './login.service';
+import { Enviromet } from 'src/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class RolService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.loginService.getToken()}`
   });
-  private apiUrl = 'http://184.72.79.221:3333/api/v2/roles';
+  private apiUrl = `http://${Enviromet.url}/api/v2/roles`;
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

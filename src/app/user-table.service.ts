@@ -3,15 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from './usuario';
 import { LoginService } from './login.service';
+import { Enviromet } from 'src/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
   private headers = new HttpHeaders({
-    'Authorization': `Bearer ${this.loginService.getToken()}`
+    'Authorization': `Bearer ${this.loginService.getToken()}`,
   });
-  private apiUrl = 'http://184.72.79.221:3333/api/v2/usuario';
+  private apiUrl = `http://${Enviromet.url}/api/v2/usuario`;
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 

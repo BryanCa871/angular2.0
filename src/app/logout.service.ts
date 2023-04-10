@@ -5,6 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { User } from './user';
 import { HttpHeaders } from '@angular/common/http';
 import { LoginService } from './login.service';
+import { Enviromet } from 'src/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class LogoutService {
   private headers = new HttpHeaders({
     'Authorization': `Bearer ${this.login.getToken()}`
   });
-  private apiUrl = 'http://184.72.79.221:3333/api/logout';
+  private apiUrl = `http://${Enviromet.url}/api/logout`;
 
   constructor(private http: HttpClient, private cookies: CookieService, private login: LoginService) { }
 
