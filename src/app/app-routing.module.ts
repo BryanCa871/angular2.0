@@ -7,7 +7,6 @@ import { ValidacionComponent } from './validacion/validacion.component';
 import { UsuarioComponent } from './user/user.component';
 import { UsuariosEditarComponent } from './user-editar/user-editar.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { BarcoComponent } from './barco/barco.component';
 //import { GameBoardComponent } from './game-board/game-board.component';
 import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
 //import { PartidaCrearComponent } from './partida-crear/partida-crear.component';
@@ -33,7 +32,6 @@ const routes: Routes = [
 
   {path: 'error', component:ErrorPageComponent},
 
-  {path: 'barco', component:BarcoComponent},
 //{path: 'game', component:GameBoardComponent},
   {path: 'lista', component:ListaPartidasComponent},
 //  {path: 'game?position=right', component:GameBoardComponent},
