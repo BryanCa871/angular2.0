@@ -13,11 +13,11 @@
     </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let user of salonesFiltrados">
+      <tr *ngFor="let user of salones">
         <td>{{ user.ubicacion }}</td>
         <td>{{user.user.name}}</td>
         <td>
-            <a [routerLink]="'/sensor/' " class="btn btn-primary">Ver sensores</a>
+            <a [routerLink]="'/sensor/' + user._id " class="btn btn-primary">Ver sensores</a>
           <a [routerLink]="'/salones/UP/' + user._id " class="btn btn-primary">Editar</a>
           <button class="btn btn-primary" (click)="deleteUser(user)">Eliminar</button>
         </td>

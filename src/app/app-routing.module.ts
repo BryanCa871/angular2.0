@@ -31,7 +31,7 @@ const routes: Routes = [
   {path: 'error', component:ErrorPageComponent},
 
   /////////////////////////////////////////////////////////
-  {path: 'sensor', component:SensorComponent},
+  {path: 'sensor/:id', component:SensorComponent},
   {path: 'sensores/crear', component:SensorCrearComponent},
   {path: 'sensores/UP/:id', component:SensorEditarComponent},
   {path: 'sensores/:id', component:DatosComponent},

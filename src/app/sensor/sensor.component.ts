@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Sensor } from '../sensor';
 import { SensorService } from '../sensor.service';
+import { Enviromet } from 'src/enviroment';
 
 
 @Component({
@@ -17,6 +18,15 @@ export class SensorComponent implements OnInit {
 
   ngOnInit() {
     this.read();
+    const stream = new EventSource(`http://${Enviromet.url}/stream`);
+    stream.addEventListener('message',(event) => {
+      if(event.data){
+        this.read();
+      }
+      else{
+        console.log("error")
+      }
+    })
   }
 
   read(): void {

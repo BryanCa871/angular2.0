@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Sensor } from '../sensor';
 import { SensorService } from '../sensor.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Enviromet } from 'src/enviroment';
 
 @Component({
   selector: 'app-datos',
@@ -28,6 +29,19 @@ export class DatosComponent implements OnInit{
       this.sensor = data; // asignamos los datos del alumno recuperado a la propiedad alumno
       this.sensorForm.patchValue(data); // actualizamos los valores del formulario con los datos recuperados
     });
+
+    const stream = new EventSource(`http://${Enviromet.url}/stream`);
+    stream.addEventListener('message',(event) => {
+      if(event.data){
+        this.sensorService.obtenerDatos(this.id).subscribe((data: Sensor) => {
+        this.sensor = data; // asignamos los datos del alumno recuperado a la propiedad alumno
+        this.sensorForm.patchValue(data); // actualizamos los valores del formulario con los datos recuperados
+        });
+      }
+      else{
+        console.log("error")
+      }
+    })
   }
 
   updateSensor(): void {
