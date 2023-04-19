@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Sensor } from './sensor';
 import { LoginService } from './login.service';
 import { Enviromet } from 'src/enviroment';
+import { AgregarSensor } from './agregar-sensor';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,10 @@ export class SensorService {
 
   constructor(private http: HttpClient, private loginService: LoginService) { }
 
-  read(): Observable<Sensor[]> {
-    return this.http.get<Sensor[]>(this.apiUrl,{headers:this.headers});
+  read(id: string): Observable<Sensor[]> {
+    return this.http.get<Sensor[]>(`http://${Enviromet.url}/api/v2/sensores/obtener/${id}`, { headers: this.headers });
   }
+  
 
   getById(_id: number): Observable<Sensor> {
     const url = `${this.apiUrl}/UP/${_id}`;
@@ -42,6 +44,16 @@ export class SensorService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Sensor>(url,{headers:this.headers});
   }
+
+  agregarSensor(sensor: Sensor): Observable<Sensor> {
+    const id =sensor.id
+    return this.http.post<Sensor>(`http://127.0.0.1:3333/api/v2/sensores/${id}`, { sensores: [sensor] }, { headers: this.headers });
+}
+
+agregarSensorTemperatura(sensor: AgregarSensor): Observable<AgregarSensor> {
+  const id =sensor.id
+  return this.http.post<AgregarSensor>(`http://127.0.0.1:3333/api/v2/sensores/${id}`, { sensores: [sensor] }, { headers: this.headers });
+}
 
   
 }

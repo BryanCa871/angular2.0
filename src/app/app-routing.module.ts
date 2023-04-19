@@ -18,6 +18,7 @@ import { DatosComponent } from './datos/datos.component';
 import { SalonComponent } from './salon/salon.component';
 import { SalonCrearComponent } from './salon-crear/salon-crear.component';
 import { SalonEditarComponent } from './salon-editar/salon-editar.component';
+import { AgregarSensorComponent } from './agregar-sensor/agregar-sensor.component';
 
 const routes: Routes = [
 
@@ -38,7 +39,7 @@ const routes: Routes = [
   {path: 'salon', component:SalonComponent},
   {path: 'salones/crear', component:SalonCrearComponent},
   {path: 'salones/UP/:id', component:SalonEditarComponent},
-
+  {path: 'sensor/add/:id', component:AgregarSensorComponent},
 
 
 

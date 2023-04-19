@@ -4,6 +4,7 @@ import { Salon } from '../salon';
 import { SalonService } from '../salon.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { User } from '../user';
+import { Sensor } from '../sensor';
 
 @Component({
   selector: 'app-salon-crear',
@@ -13,6 +14,7 @@ import { User } from '../user';
 export class SalonCrearComponent implements OnInit{
   salonForm: FormGroup;
   salon: Salon = new Salon();
+  sensores: Sensor[] = [];
 
   constructor(private salonService: SalonService, private fb: FormBuilder, private router: Router) {
     this.salonForm = this.fb.group({

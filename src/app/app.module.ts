@@ -37,6 +37,7 @@ import { DatosComponent } from './datos/datos.component';
 import { SalonComponent } from './salon/salon.component';
 import { SalonCrearComponent } from './salon-crear/salon-crear.component';
 import { SalonEditarComponent } from './salon-editar/salon-editar.component';
+import { AgregarSensorComponent } from './agregar-sensor/agregar-sensor.component';
 
 
 
@@ -62,6 +63,7 @@ const config: SocketIoConfig = { url: 'http://127.0.0.1:3333', options: {} };
     SalonComponent,
     SalonCrearComponent,
     SalonEditarComponent,
+    AgregarSensorComponent
     
   ],
   imports: [

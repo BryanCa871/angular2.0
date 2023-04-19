@@ -48,5 +48,7 @@ export class SalonService {
     return this.http.get<User>('http://127.0.0.1:3333/api/user',{headers:this.headers});
   }
 
+  }
   
-}
+  
+

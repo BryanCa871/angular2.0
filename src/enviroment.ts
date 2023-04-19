@@ -1,3 +1,3 @@
 export const Enviromet = {
-    url: '192.168.135.98:3333'
+    url: '127.0.0.1:3333'
 }

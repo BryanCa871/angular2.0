@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>AGREGAR Sensor</h2>
+    <form [formGroup]="sensorForm" (ngSubmit)="createSensor()">
+     
+
+        <div class="form-group">
+            <label for="temperatura">Sensor de Temperatura:</label>
+            <input type="checkbox" formControlName="temperatura" id="temperatura">
+          </div>
+        
+          <div class="form-group">
+            <label for="humo">Sensor de Humo:</label>
+            <input type="checkbox" formControlName="humo" id="humo">
+          </div>
+
+          <div class="form-group">
+            <label for="luz">Sensor de Luz:</label>
+            <input type="checkbox" formControlName="luz" id="luz">
+          </div>
+
+          <div class="form-group">
+            <label for="movimiento">Sensor de movimiento:</label>
+            <input type="checkbox" formControlName="movimiento" id="movimiento">
+          </div>
+          
+          <div class="form-group">
+            <label for="magnetico">Sensor magnetico:</label>
+            <input type="checkbox" formControlName="magnetico" id="magnetico">
+          </div>
+
+          <div class="form-group">
+            <label for="voltaje">Sensor Voltaje:</label>
+            <input type="checkbox" formControlName="voltaje" id="voltaje">
+          </div>
+
+          <div class="form-group">
+            <label for="sonido">Sensor de sonido:</label>
+            <input type="checkbox" formControlName="sonido" id="sonido">
+          </div>
+
+          <div class="form-group">
+            <label for="fuego">Sensor de fuego:</label>
+            <input type="checkbox" formControlName="fuego" id="fuego">
+          </div>
+
+        
+
+
+
+
+
+
+      <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+  </div>

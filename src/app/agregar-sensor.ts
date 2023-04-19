@@ -1,5 +1,4 @@
-export class Sensor {
-    _id: string;
+export class AgregarSensor {
     nombre: string;
     tipo: string;
     ubicacion: string;
@@ -12,7 +11,6 @@ export class Sensor {
     id: string;
 
     constructor() {
-        this._id = '';
         this.nombre = '';
         this.tipo = '';
         this.ubicacion = '';
