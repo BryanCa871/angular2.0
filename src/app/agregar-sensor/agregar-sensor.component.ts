@@ -52,7 +52,7 @@ export class AgregarSensorComponent {
         ubicacion: "Pared",
         descripcion: "Sensor de temperatura para el control de temperatura en el salón",
         fecha_creacion: "21/04/2023",
-        pines: "0",
+        pines: "12",
         type: "temperatura",
         unidad: "Celsius",
         id: this.sensorId
@@ -107,7 +107,7 @@ export class AgregarSensorComponent {
         descripcion: "Sensor de movimiento para detectar la presencia de personas en el salón",
         fecha_creacion: "21/04/2023",
         pines: "10",
-        type: "movimiento",
+        type: "presencia",
         unidad: "N/A",
         id: this.sensorId
       };
@@ -125,7 +125,7 @@ export class AgregarSensorComponent {
         descripcion: "Sensor magnético para detectar la apertura y cierre de la puerta principal",
         fecha_creacion: "21/04/2023",
         pines: "3",
-        type: "magnético",
+        type: "magnetico",
         unidad: "N/A",
         id: this.sensorId
       };
@@ -143,7 +143,7 @@ export class AgregarSensorComponent {
         descripcion: "Sensor de voltaje para medir la presencia de este mismo",
         fecha_creacion: "21/04/2023",
         pines: "A2",
-        type: "voltaje",
+        type: "corriente",
         unidad: "V",
         id: this.sensorId
       };
@@ -179,7 +179,7 @@ export class AgregarSensorComponent {
         descripcion: "fuego",
         fecha_creacion: "21/04/2023",
         pines: "7",
-        type: "fuego",
+        type: "flama",
         unidad: "N/A",
         id: this.sensorId
       };

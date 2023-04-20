@@ -26,8 +26,21 @@ export class DatosComponent implements OnInit{
       unidad: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]*$/)]),   });
 
     this.sensorService.obtenerDatos(this.id).subscribe((data: Sensor) => {
-      this.sensor = data; // asignamos los datos del alumno recuperado a la propiedad alumno
+      if(data === null){
+        this.sensor.type = "No hay datos"
+        this.sensor.value = "No hay datos"
+        this.sensor.unidad = "No hay datos"
+      }
+      else{
+        this.sensor = data
+        console.log(this.sensor)
+      }
+       // asignamos los datos del alumno recuperado a la propiedad alumno
       this.sensorForm.patchValue(data); // actualizamos los valores del formulario con los datos recuperados
+    }, (error) => {
+        this.sensor.type = "No hay datos"
+        this.sensor.value = "No hay datos"
+        this.sensor.unidad = "No hay datos"
     });
 
     const stream = new EventSource(`http://${Enviromet.url}/stream`);
