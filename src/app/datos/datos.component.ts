@@ -33,7 +33,7 @@ export class DatosComponent implements OnInit{
       }
       else{
         this.sensor = data
-        console.log(this.sensor)
+        //console.log(this.sensor)
       }
        // asignamos los datos del alumno recuperado a la propiedad alumno
       this.sensorForm.patchValue(data); // actualizamos los valores del formulario con los datos recuperados
