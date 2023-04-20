@@ -32,14 +32,14 @@ const routes: Routes = [
   {path: 'error', component:ErrorPageComponent},
 
   /////////////////////////////////////////////////////////
-  {path: 'sensor/:id', component:SensorComponent},
-  {path: 'sensores/crear', component:SensorCrearComponent},
-  {path: 'sensores/UP/:id', component:SensorEditarComponent},
-  {path: 'sensores/:id', component:DatosComponent},
-  {path: 'salon', component:SalonComponent},
-  {path: 'salones/crear', component:SalonCrearComponent},
-  {path: 'salones/UP/:id', component:SalonEditarComponent},
-  {path: 'sensor/add/:id', component:AgregarSensorComponent},
+  {path: 'sensor/:id', component:SensorComponent,canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'sensores/crear', component:SensorCrearComponent,canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'sensores/UP/:id', component:SensorEditarComponent, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'sensores/:id', component:DatosComponent, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'salon', component:SalonComponent, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'salones/crear', component:SalonCrearComponent, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'salones/UP/:id', component:SalonEditarComponent, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
+  {path: 'sensor/add/:id', component:AgregarSensorComponent, canActivate: [LoginGuard], data: {roles: [1,2,3]}},
 
 
 

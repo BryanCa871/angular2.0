@@ -47,15 +47,14 @@ export class AgregarSensorComponent {
     if (sensor.temperatura) {
       console.log("temperatura");
       const temperaturaSensor: AgregarSensor = {
-        nombre: "temperaturaa",
-        tipo: "dhta",
-        ubicacion: "pareda",
-        descripcion: "midea",
-        fecha_creacion: "221",
-        pines: "",
-        type: "",
-        value: "",
-        unidad: "",
+        nombre: "Sensor de Temperatura",
+        tipo: "Sensor",
+        ubicacion: "Pared",
+        descripcion: "Sensor de temperatura para el control de temperatura en el salón",
+        fecha_creacion: "21/04/2023",
+        pines: "0",
+        type: "temperatura",
+        unidad: "Celsius",
         id: this.sensorId
       };
       this.sensorService.agregarSensorTemperatura(temperaturaSensor).subscribe(
@@ -66,15 +65,14 @@ export class AgregarSensorComponent {
 
     if (sensor.humo) {
       const temperaturaSensor: AgregarSensor = {
-        nombre: "humo",
-        tipo: "humo",
-        ubicacion: "humo",
-        descripcion: "humo",
-        fecha_creacion: "11",
-        pines: "",
-        type: "",
-        value: "",
-        unidad: "",
+        nombre: "Sensor de Humo",
+        tipo: "Sensor",
+        ubicacion: "Salon",
+        descripcion: "Sensor de humo para detectar la presencia de humo en el salón",
+        fecha_creacion: "21/04/2023",
+        pines: "11",
+        type: "humo",
+        unidad:  "N/A",
         id: this.sensorId
       };
       this.sensorService.agregarSensorTemperatura(temperaturaSensor).subscribe(
@@ -85,15 +83,14 @@ export class AgregarSensorComponent {
 
     if (sensor.luz) {
       const temperaturaSensor: AgregarSensor = {
-        nombre: "luz",
-        tipo: "luz",
-        ubicacion: "luz",
-        descripcion: "luz",
-        fecha_creacion: "11",
-        pines: "",
-        type: "",
-        value: "",
-        unidad: "",
+        nombre: "Sensor de Luz ",
+        tipo: "Sensor",
+        ubicacion: "Pared",
+        descripcion: "Sensor de luz para detectar los niveles de luz en el salón",
+        fecha_creacion: "21/04/2023",
+        pines: "A0",
+        type: "luz",
+        unidad: "Ohmios",
         id: this.sensorId
       };
       this.sensorService.agregarSensorTemperatura(temperaturaSensor).subscribe(
@@ -104,15 +101,14 @@ export class AgregarSensorComponent {
 
     if (sensor.movimiento) {
       const temperaturaSensor: AgregarSensor = {
-        nombre: "movimiento",
-        tipo: "movimiento",
-        ubicacion: "movimiento",
-        descripcion: "movimiento",
-        fecha_creacion: "11",
-        pines: "",
-        type: "",
-        value: "",
-        unidad: "",
+        nombre: "Sensor de Movimiento",
+        tipo: "Sensor",
+        ubicacion: "Pared",
+        descripcion: "Sensor de movimiento para detectar la presencia de personas en el salón",
+        fecha_creacion: "21/04/2023",
+        pines: "10",
+        type: "movimiento",
+        unidad: "N/A",
         id: this.sensorId
       };
       this.sensorService.agregarSensorTemperatura(temperaturaSensor).subscribe(
@@ -123,15 +119,14 @@ export class AgregarSensorComponent {
 
     if (sensor.magnetico) {
       const temperaturaSensor: AgregarSensor = {
-        nombre: "magnetico",
-        tipo: "magnetico",
-        ubicacion: "magnetico",
-        descripcion: "magnetico",
-        fecha_creacion: "11",
-        pines: "",
-        type: "",
-        value: "",
-        unidad: "",
+        nombre: "Sensor Magnético",
+        tipo: "Sensor",
+        ubicacion: "Puerta principal",
+        descripcion: "Sensor magnético para detectar la apertura y cierre de la puerta principal",
+        fecha_creacion: "21/04/2023",
+        pines: "3",
+        type: "magnético",
+        unidad: "N/A",
         id: this.sensorId
       };
       this.sensorService.agregarSensorTemperatura(temperaturaSensor).subscribe(
@@ -142,15 +137,14 @@ export class AgregarSensorComponent {
 
     if (sensor.voltaje) {
       const temperaturaSensor: AgregarSensor = {
-        nombre: "voltaje",
-        tipo: "voltaje",
-        ubicacion: "voltaje",
-        descripcion: "voltaje",
-        fecha_creacion: "11",
-        pines: "",
-        type: "",
-        value: "",
-        unidad: "",
+        nombre: "Sensor de Voltaje",
+        tipo: "Sensor",
+        ubicacion: "Suelo",
+        descripcion: "Sensor de voltaje para medir la presencia de este mismo",
+        fecha_creacion: "21/04/2023",
+        pines: "A2",
+        type: "voltaje",
+        unidad: "V",
         id: this.sensorId
       };
       this.sensorService.agregarSensorTemperatura(temperaturaSensor).subscribe(
@@ -161,15 +155,14 @@ export class AgregarSensorComponent {
 
     if (sensor.sonido) {
       const temperaturaSensor: AgregarSensor = {
-        nombre: "sonido",
-        tipo: "sonido",
-        ubicacion: "sonido",
-        descripcion: "sonido",
-        fecha_creacion: "11",
-        pines: "",
-        type: "",
-        value: "",
-        unidad: "",
+        nombre: "Sensor de Sonido",
+        tipo: "Sensor",
+        ubicacion: "Pared",
+        descripcion: "Sensor de sonido para medir el nivel de ruido en el salón",
+        fecha_creacion: "21/04/2023",
+        pines: "A1",
+        type: "sonido",
+        unidad: "dB",
         id: this.sensorId
       };
       this.sensorService.agregarSensorTemperatura(temperaturaSensor).subscribe(
@@ -180,15 +173,14 @@ export class AgregarSensorComponent {
 
     if (sensor.fuego) {
       const temperaturaSensor: AgregarSensor = {
-        nombre: "fuego",
-        tipo: "fuego",
-        ubicacion: "fuego",
+        nombre: "Sensor de Fuego",
+        tipo: "Sensor",
+        ubicacion: "Salon",
         descripcion: "fuego",
-        fecha_creacion: "11",
-        pines: "",
-        type: "",
-        value: "",
-        unidad: "",
+        fecha_creacion: "21/04/2023",
+        pines: "7",
+        type: "fuego",
+        unidad: "N/A",
         id: this.sensorId
       };
       this.sensorService.agregarSensorTemperatura(temperaturaSensor).subscribe(

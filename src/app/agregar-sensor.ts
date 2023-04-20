@@ -6,7 +6,6 @@ export class AgregarSensor {
     fecha_creacion: string;
     pines: string;
     type: string;
-    value: string;
     unidad: string;
     id: string;
 
@@ -18,7 +17,6 @@ export class AgregarSensor {
         this.fecha_creacion = '';
         this.pines = '';
         this.type = '';
-        this.value = '';
         this.unidad = '';
         this.id = '';
     }

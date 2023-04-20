@@ -47,12 +47,12 @@ export class SensorService {
 
   agregarSensor(sensor: Sensor): Observable<Sensor> {
     const id =sensor.id
-    return this.http.post<Sensor>(`http://127.0.0.1:3333/api/v2/sensores/${id}`, { sensores: [sensor] }, { headers: this.headers });
+    return this.http.post<Sensor>(`http://${Enviromet.url}/api/v2/sensores/${id}`, { sensores: [sensor] }, { headers: this.headers });
 }
 
 agregarSensorTemperatura(sensor: AgregarSensor): Observable<AgregarSensor> {
   const id =sensor.id
-  return this.http.post<AgregarSensor>(`http://127.0.0.1:3333/api/v2/sensores/${id}`, { sensores: [sensor] }, { headers: this.headers });
+  return this.http.post<AgregarSensor>(`http://${Enviromet.url}/api/v2/sensores/${id}`, { sensores: [sensor] }, { headers: this.headers });
 }
 
   

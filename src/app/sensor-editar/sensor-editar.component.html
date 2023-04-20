@@ -85,21 +85,6 @@
             </div>
     
     
-            <div class="form-group">
-                <label for="fecha_creacion">Fecha de creacion:</label>
-                <input type="text" formControlName="fecha_creacion" class="form-control" id="fecha_creacion">
-                <div *ngIf="sensorForm.controls['fecha_creacion'].invalid && (sensorForm.controls['fecha_creacion'].dirty || sensorForm.controls['fecha_creacion'].touched)" class="alert alert-danger">
-                    <div *ngIf="sensorForm.controls['fecha_creacion'].hasError('required')"> 
-                    La fecha de creacion es obligatoria.
-                    </div>
-                    <div *ngIf="sensorForm.controls['fecha_creacion'].hasError('minlength')"> 
-                    La fecha de creacion debe tener al menos 3 letras.
-                    </div>
-                    <div *ngIf="sensorForm.controls['fecha_creacion'].hasError('pattern')"> 
-                    La fecha de creacion solo puede contener letras.
-                    </div>
-                </div>
-            </div>
 
 
 

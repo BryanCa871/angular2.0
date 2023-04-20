@@ -1,55 +1,46 @@
 <div class="container">
-    <h2>AGREGAR Sensor</h2>
-    <form [formGroup]="sensorForm" (ngSubmit)="createSensor()">
-     
+  <h2>Agregar Sensor</h2>
+  <form [formGroup]="sensorForm" (ngSubmit)="createSensor()">
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" formControlName="temperatura" id="temperatura">
+      <label class="form-check-label" for="temperatura" style="font-size: 20px;">Sensor de Temperatura</label>
+    </div>
 
-        <div class="form-group">
-            <label for="temperatura">Sensor de Temperatura:</label>
-            <input type="checkbox" formControlName="temperatura" id="temperatura">
-          </div>
-        
-          <div class="form-group">
-            <label for="humo">Sensor de Humo:</label>
-            <input type="checkbox" formControlName="humo" id="humo">
-          </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" formControlName="humo" id="humo">
+      <label class="form-check-label" for="humo" style="font-size: 20px;">Sensor de Humo</label>
+    </div>
 
-          <div class="form-group">
-            <label for="luz">Sensor de Luz:</label>
-            <input type="checkbox" formControlName="luz" id="luz">
-          </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" formControlName="luz" id="luz">
+      <label class="form-check-label" for="luz" style="font-size: 20px;">Sensor de Luz</label>
+    </div>
 
-          <div class="form-group">
-            <label for="movimiento">Sensor de movimiento:</label>
-            <input type="checkbox" formControlName="movimiento" id="movimiento">
-          </div>
-          
-          <div class="form-group">
-            <label for="magnetico">Sensor magnetico:</label>
-            <input type="checkbox" formControlName="magnetico" id="magnetico">
-          </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" formControlName="movimiento" id="movimiento">
+      <label class="form-check-label" for="movimiento" style="font-size: 20px;">Sensor de Movimiento</label>
+    </div>
 
-          <div class="form-group">
-            <label for="voltaje">Sensor Voltaje:</label>
-            <input type="checkbox" formControlName="voltaje" id="voltaje">
-          </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" formControlName="magnetico" id="magnetico">
+      <label class="form-check-label" for="magnetico" style="font-size: 20px;">Sensor Magnético</label>
+    </div>
 
-          <div class="form-group">
-            <label for="sonido">Sensor de sonido:</label>
-            <input type="checkbox" formControlName="sonido" id="sonido">
-          </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" formControlName="voltaje" id="voltaje">
+      <label class="form-check-label" for="voltaje" style="font-size: 20px;">Sensor de Voltaje</label>
+    </div>
 
-          <div class="form-group">
-            <label for="fuego">Sensor de fuego:</label>
-            <input type="checkbox" formControlName="fuego" id="fuego">
-          </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" formControlName="sonido" id="sonido">
+      <label class="form-check-label" for="sonido" style="font-size: 20px;">Sensor de Sonido</label>
+    </div>
 
-        
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" formControlName="fuego" id="fuego">
+      <label class="form-check-label" for="fuego" style="font-size: 20px;">Sensor de Fuego</label>
+    </div>
 
-
-
-
-
-
-      <button type="submit" class="btn btn-primary">Crear</button>
-    </form>
-  </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

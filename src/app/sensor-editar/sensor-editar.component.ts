@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Sensor } from '../sensor';
 import { SensorService } from '../sensor.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-sensor-editar',
@@ -14,21 +16,18 @@ export class SensorEditarComponent implements OnInit {
   sensor: Sensor = new Sensor();
   sensorForm!: FormGroup;
 
-  constructor(private route: ActivatedRoute, private router: Router, private sensorService: SensorService, private fb: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private router: Router, private sensorService: SensorService, private fb: FormBuilder, private location: Location) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-
+    console.log(this.id)
     this.sensorForm = this.fb.group({
       nombre: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]*$/)]),
       tipo: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]*$/)]),
       ubicacion: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]*$/)]),
       descripcion: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]*$/)]),
       pines: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern(/^[0-9,]*$/)]),
-      fecha_creacion: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^\d{4}-\d{2}-\d{2}$/)
-      ]),    });
+         });
 
     this.sensorService.getById(this.id).subscribe((data: Sensor) => {
       this.sensor = data; // asignamos los datos del alumno recuperado a la propiedad alumno
@@ -50,6 +49,6 @@ export class SensorEditarComponent implements OnInit {
   }
 
   gotoList(): void {
-    this.router.navigate(['/sensor']);
+    this.location.back();
   }
 }

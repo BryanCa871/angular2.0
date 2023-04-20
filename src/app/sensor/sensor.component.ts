@@ -13,12 +13,14 @@ export class SensorComponent implements OnInit {
   sensores: Sensor[] = [];
   currentSensor: Sensor = new Sensor();
   errorMsg: string = '';
+  id!: number
   sensorId: string = ''; // Definimos sensorId como propiedad de la clase
 
   constructor(private sensorService: SensorService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.sensorId = this.route.snapshot.paramMap.get('id') || '';
+    this.id = this.route.snapshot.params['id'];
     this.read(this.sensorId);
     const stream = new EventSource(`http://${Enviromet.url}/stream`);
     stream.addEventListener('message', (event) => {

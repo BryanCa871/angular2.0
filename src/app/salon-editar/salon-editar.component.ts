@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Salon } from '../salon';
 import { SalonService } from '../salon.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-salon-editar',
@@ -14,7 +15,7 @@ export class SalonEditarComponent implements OnInit {
   salon: Salon = new Salon();
   salonForm!: FormGroup;
 
-  constructor(private route: ActivatedRoute, private router: Router, private salonService: SalonService, private fb: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private router: Router, private salonService: SalonService, private fb: FormBuilder, private location: Location) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -43,6 +44,6 @@ export class SalonEditarComponent implements OnInit {
   }
 
   gotoList(): void {
-    this.router.navigate(['/salon']);
+    this.location.back();
   }
 }

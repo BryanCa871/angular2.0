@@ -16,7 +16,6 @@ export class ValidacionComponent implements OnInit{
 
   constructor(private validacion:ValidacionService, private fb: FormBuilder, private router: Router) {
     this.validacionForm = this.fb.group({
-      url: ['', Validators.required],
       Correo: ['', Validators.required],
       Verificacion: ['', Validators.required]
     });
@@ -26,12 +25,13 @@ export class ValidacionComponent implements OnInit{
   }
 
   activar(): void {
+    console.log(this.validacionForm.value);
     this.validacion.activacion(this.validacionForm.value).subscribe(
       (response) => {
         console.log(this.validacionForm.value);
         this.router.navigate(['/login']);
       },
-      (error) => console.log(Response)
+      (error) => console.log(error)
     );
   }
 
