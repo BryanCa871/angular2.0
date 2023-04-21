@@ -5,8 +5,9 @@
       <div class="card">
         <div class="card-body">
           <p class="card-text">Tipo: {{ sensor.type }}</p>
-          <p class="card-text">Valor: {{ sensor.value }}</p>
+          <p class="card-text">Valor: {{ getMensaje(sensor.value, sensor.type) }}</p>
           <p class="card-text">Unidad: {{ sensor.unidad }}</p>
         </div>
       </div>
+      
     </div>

@@ -56,6 +56,67 @@ export class DatosComponent implements OnInit{
       }
     })
   }
+  getMensaje(value: string, type: string): string {
+    if (type === 'luz') {
+      const luzValue = parseInt(value);
+      if (luzValue > 450) {
+        return 'No Hay luz';
+      } else {
+        return 'Hay luz';
+      }
+    } else if (type === 'magnetico') {
+      const magneticoValue = parseInt(value);
+      if (magneticoValue === 1) {
+        return 'Puerta abierta';
+      } else {
+        return 'Puerta cerrada';
+      }
+    }
+    else if(type === 'corriente'){
+      const corrienteValue = parseInt(value);
+      if(corrienteValue > 1){
+        return 'Hay corriente';
+      }else{
+        return 'No hay corriente';
+      }
+    }
+    else if(type === 'sonido'){
+      const sonidoValue = parseInt(value);
+      if(sonidoValue > 30){
+        return 'Hay ruido';
+      }else{
+        return 'No hay sonido o poco sonido';
+      }
+    }
+    else if(type === 'flama'){
+      const flamaValue = parseInt(value);
+      if(flamaValue > 1){
+        return 'Hay flama';
+      }else{
+        return 'No hay flama';
+      }
+    }
+    else if(type === 'humo'){
+      const humoValue = parseInt(value);
+      if(humoValue > 1){
+        return 'Hay humo';
+      }else{
+        return 'No hay humo';
+      }
+    }else if(type === 'presencia'){
+      const presenciaValue = parseInt(value);
+      if(presenciaValue > 1){
+        return 'Hay presencia';
+      }else{
+        return 'No hay presencia';
+      }
+    }
+    else {
+      return 'No hay datos';
+    }
+  }
+  
+  
 
   updateSensor(): void {
     this.sensorService.update(this.id, this.sensorForm.value)
