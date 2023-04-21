@@ -110,6 +110,8 @@ export class DatosComponent implements OnInit{
       }else{
         return 'No hay presencia';
       }
+    }else if(type === 'temperatura'){
+        return value;
     }
     else {
       return 'No hay datos';
