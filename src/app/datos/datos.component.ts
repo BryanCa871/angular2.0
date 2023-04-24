@@ -59,7 +59,7 @@ export class DatosComponent implements OnInit{
   getMensaje(value: string, type: string): string {
     if (type === 'luz') {
       const luzValue = parseInt(value);
-      if (luzValue > 450) {
+      if (luzValue >= 450) {
         return 'No Hay luz';
       } else {
         return 'Hay luz';
@@ -73,16 +73,11 @@ export class DatosComponent implements OnInit{
       }
     }
     else if(type === 'corriente'){
-      const corrienteValue = parseInt(value);
-      if(corrienteValue > 1){
-        return 'Hay corriente';
-      }else{
-        return 'No hay corriente';
-      }
+      return value;
     }
     else if(type === 'sonido'){
       const sonidoValue = parseInt(value);
-      if(sonidoValue > 30){
+      if(sonidoValue >= 100){
         return 'Hay ruido';
       }else{
         return 'No hay sonido o poco sonido';
@@ -90,7 +85,7 @@ export class DatosComponent implements OnInit{
     }
     else if(type === 'flama'){
       const flamaValue = parseInt(value);
-      if(flamaValue > 1){
+      if(flamaValue === 0){
         return 'Hay flama';
       }else{
         return 'No hay flama';
@@ -98,14 +93,14 @@ export class DatosComponent implements OnInit{
     }
     else if(type === 'humo'){
       const humoValue = parseInt(value);
-      if(humoValue > 1){
+      if(humoValue >= 1){
         return 'Hay humo';
       }else{
         return 'No hay humo';
       }
     }else if(type === 'presencia'){
       const presenciaValue = parseInt(value);
-      if(presenciaValue > 1){
+      if(presenciaValue >= 1){
         return 'Hay presencia';
       }else{
         return 'No hay presencia';
